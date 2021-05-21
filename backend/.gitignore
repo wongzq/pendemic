@@ -1,0 +1,14 @@
+#dependencies
+dist/
+keys/
+node_modules/
+
+.env*
+*.pem
+*.key
+*.csr
+
+*.rest
+*.log
+
+package-lock.json
