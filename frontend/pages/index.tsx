@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "@styles/index.module.scss";
-import Layout from "components/StyledComponents/Layout.styled";
+import Layout from "@sc/Layout.styled";
 
 type indexProps = {};
 

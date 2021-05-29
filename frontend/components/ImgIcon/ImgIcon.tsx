@@ -1,6 +1,6 @@
 import React from "react";
-import LogoPendemic from "@img/logo-pendemic.png";
-import LogoPendemicDark from "@img/logo-pendemic-dark.png";
+import LogoPendemic from "@assets/img/logo-pendemic.png";
+import LogoPendemicDark from "@assets/img/logo-pendemic-dark.png";
 
 export enum ImgIcons {
   Pendemic,

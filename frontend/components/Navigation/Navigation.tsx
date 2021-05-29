@@ -1,10 +1,10 @@
 import ImgIcon, { ImgIcons } from "components/ImgIcon/ImgIcon";
 import React from "react";
 import styles from "./Navigation.module.scss";
-import Text from "../StyledComponents/Text.styled";
-import Layout from "components/StyledComponents/Layout.styled";
+import Text from "@sc/Text.styled";
+import Layout from "@sc/Layout.styled";
 import Link from "next/link";
-import NextRoutes from "routes/next.routes";
+import NextRoutes from "@routes/next.routes";
 
 type NavOptionProps = { route: string; children: string };
 

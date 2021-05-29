@@ -19,9 +19,13 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
+      "@assets/*": ["public/assets/*"],
+      "@components/*": ["components/*"],
+      "@models/*": ["models/*"],
+      "@routes/*": ["routes/*"],
+      "@sc/*": ["components/StyledComponents/*"],
       "@styles/*": ["styles/*"],
-      "@img/*": ["public/assets/img/*"],
-      "@svg/*": ["public/assets/svg/*"]
+      "@utils/*": ["utils/*"]
     }
   },
   "exclude": ["node_modules"],
