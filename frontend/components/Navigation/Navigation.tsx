@@ -5,6 +5,7 @@ import Text from "@sc/Text.styled";
 import Layout from "@sc/Layout.styled";
 import Link from "next/link";
 import NextRoutes from "@routes/next.routes";
+import MediaQueryHooks from "hooks/media-query.hooks";
 
 type NavOptionProps = { route: string; children: string };
 
@@ -22,6 +23,8 @@ type NavigationProps = {};
 
 const Navigation: React.FC<NavigationProps> = () => {
   const loggedIn = false;
+
+  const {} = MediaQueryHooks.useDimensions();
 
   return (
     <Layout.Centered>

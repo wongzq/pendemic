@@ -12,14 +12,14 @@ const usePendemicHover = () => {
 
   React.useEffect(() => {
     if (refSvgPlan.current) {
-      const path = refSvgPlan.current.children[0].children[0];
-      path.addEventListener("mouseover", () => setPlanHovered(true));
-      path.addEventListener("mouseout", () => setPlanHovered(false));
+      const svg = refSvgPlan.current;
+      svg.addEventListener("mouseover", () => setPlanHovered(true));
+      svg.addEventListener("mouseout", () => setPlanHovered(false));
     }
     if (refSvgWrite.current) {
-      const path = refSvgWrite.current.children[0].children[0];
-      path.addEventListener("mouseover", () => setWriteHovered(true));
-      path.addEventListener("mouseout", () => setWriteHovered(false));
+      const svg = refSvgWrite.current;
+      svg.addEventListener("mouseover", () => setWriteHovered(true));
+      svg.addEventListener("mouseout", () => setWriteHovered(false));
     }
 
     if (refTxtPlan.current) {

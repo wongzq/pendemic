@@ -15,6 +15,10 @@
   cursor: pointer;
   padding: 4rem 0rem;
 
+  & > h5 {
+    display: none;
+  }
+
   & > * + * {
     margin: 0 0 0 8rem;
   }
@@ -32,4 +36,12 @@
   cursor: pointer;
   text-align: center;
   border-radius: 8rem;
+}
+
+@media only screen and (min-width: 480px) {
+  .logo {
+    & > h5 {
+      display: inline;
+    }
+  }
 }
