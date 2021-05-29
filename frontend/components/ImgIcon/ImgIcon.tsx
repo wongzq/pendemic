@@ -1,21 +1,21 @@
 import React from "react";
-import LogoPendemic from "@assets/img/logo-pendemic.png";
-import LogoPendemicDark from "@assets/img/logo-pendemic-dark.png";
+import Pendemic from "@assets/img/logo-pendemic.png";
+import PendemicDark from "@assets/img/logo-pendemic-dark.png";
 
 export enum ImgIcons {
-  Pendemic,
-  PendemicDark,
+  LogoPendemic,
+  LogoPendemicDark,
 }
 
-type ImgIconProps = { icon: ImgIcons };
+type ImgIconProps = { icon: ImgIcons; className?: string };
 
-const ImgIcon: React.FC<ImgIconProps> = ({ icon }) => {
+const ImgIcon: React.FC<ImgIconProps> = ({ icon, className = "" }) => {
   switch (icon) {
-    case ImgIcons.Pendemic:
-      return <img src={LogoPendemic} alt="Pendemic Logo" />;
+    case ImgIcons.LogoPendemic:
+      return <img className={className} src={Pendemic} alt="Logo" />;
 
-    case ImgIcons.PendemicDark:
-      return <img src={LogoPendemicDark} alt="Pendemic Logo" />;
+    case ImgIcons.LogoPendemicDark:
+      return <img className={className} src={PendemicDark} alt="Logo" />;
 
     default:
       return null;

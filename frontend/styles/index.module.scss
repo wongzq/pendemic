@@ -1,4 +1,75 @@
 .main {
+  flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 100%;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40%;
+}
+
+.txt_plan {
+  align-self: center;
+  text-align: right;
+  width: 100%;
+
+  &.plan_hovered > h1 {
+    color: var(--lavender-light);
+    text-shadow: 0rem 2rem 4rem var(--shadow);
+  }
+}
+
+.txt_write {
+  align-self: center;
+  text-align: left;
+  width: 100%;
+
+  &.write_hovered > h1 {
+    color: var(--ember-light);
+    text-shadow: 0rem 2rem 4rem var(--shadow);
+  }
+}
+
+.svg_plan {
+  width: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+
+  & > g {
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  &.plan_hovered > g > path {
+    fill: var(--lavender-light);
+    filter: drop-shadow(0rem 8rem 8rem var(--shadow));
+  }
+}
+
+.svg_write {
+  width: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+
+  & > g {
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  &.write_hovered > g > path {
+    fill: var(--ember-light);
+    filter: drop-shadow(4rem 8rem 8rem var(--shadow));
+  }
 }

@@ -28,9 +28,14 @@ const Navigation: React.FC<NavigationProps> = () => {
       <nav className={styles.main}>
         <Link href={NextRoutes.home}>
           <div className={styles.logo}>
-            <ImgIcon icon={ImgIcons.PendemicDark} />
-            <Text.H5 color="black" semibold lora>
-              Pendemic
+            <ImgIcon icon={ImgIcons.LogoPendemicDark} />
+            <Text.H5 weight="semibold">
+              <Text.Span color="ember" font="lora">
+                Pen
+              </Text.Span>
+              <Text.Span color="lavender" font="lora">
+                demic
+              </Text.Span>
             </Text.H5>
           </div>
         </Link>

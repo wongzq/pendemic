@@ -1,21 +1,33 @@
 import styled from "styled-components";
 
 interface StyledTextProps {
-  color?: "white" | "black" | "grey";
-  bold?: boolean;
-  semibold?: boolean;
-  catamaran?: boolean;
-  lora?: boolean;
+  color?: "white" | "black" | "grey" | "lavender" | "ember";
+  weight?: "normal" | "semibold" | "bold";
+  font?: "poppins" | "catamaran" | "lora";
 }
 
 const getColor = (props: StyledTextProps) =>
   props.color ? `var(--${props.color})` : `var(--black)`;
 
 const getFontWeight = (props: StyledTextProps) =>
-  props.bold ? 700 : props.semibold ? 600 : 400;
+  props.weight === "bold"
+    ? 700
+    : props.weight === "semibold"
+    ? 600
+    : props.weight === "normal"
+    ? 400
+    : 400;
 
-const getFontFamily = (props: StyledTextProps) =>
-  props.lora ? `Lora` : props.catamaran ? `Catamaran` : `Poppins`;
+const getFontFamily = (props: StyledTextProps) => props.font ?? "poppins";
+
+const getSpanColor = (props: StyledTextProps) =>
+  props.color ? getColor(props) : "";
+
+const getSpanFontWeight = (props: StyledTextProps) =>
+  props.weight ? getFontWeight(props) : "";
+
+const getSpanFontFamily = (props: StyledTextProps) =>
+  props.font ? getFontFamily(props) : "";
 
 // Styled Text Components
 const H1 = styled.h1<StyledTextProps>`
@@ -67,6 +79,12 @@ const P = styled.p<StyledTextProps>`
   font-family: ${getFontFamily};
 `;
 
+const Span = styled.span<StyledTextProps>`
+  color: ${getSpanColor};
+  font-weight: ${getSpanFontWeight};
+  font-family: ${getSpanFontFamily};
+`;
+
 const Text = {
   H1,
   H2,
@@ -75,6 +93,7 @@ const Text = {
   H5,
   H6,
   P,
+  Span,
 };
 
 export default Text;

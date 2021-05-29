@@ -4,7 +4,8 @@ interface StyledPageProps {
   padding?: boolean;
 }
 
-const getPadding = (props: StyledPageProps) => (props.padding ? "0rem 24rem" : "");
+const getPadding = (props: StyledPageProps) =>
+  props.padding ? "0rem 24rem" : "";
 
 const Centered = styled.div`
   width: 100%;
@@ -13,6 +14,8 @@ const Centered = styled.div`
   align-self: center;
   padding: ${getPadding};
   background: var(--white);
+  display: flex;
+  flex-direction: column;
 `;
 
 const Layout = { Centered };
