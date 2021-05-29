@@ -29,9 +29,9 @@ const Navigation: React.FC<NavigationProps> = () => {
         <Link href={NextRoutes.home}>
           <div className={styles.logo}>
             <ImgIcon icon={ImgIcons.PendemicDark} />
-            <Text.H6 color="black" semibold lora>
+            <Text.H5 color="black" semibold lora>
               Pendemic
-            </Text.H6>
+            </Text.H5>
           </div>
         </Link>
 
