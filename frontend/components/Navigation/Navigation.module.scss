@@ -1,0 +1,35 @@
+.main {
+  height: 48rem;
+  background: var(--white);
+  padding: 0rem 24rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  padding: 8rem 0rem;
+
+  & > * + * {
+    margin: 0 0 0 8rem;
+  }
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24rem;
+  align-items: center;
+}
+
+.nav_option {
+  padding: 8rem;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8rem;
+}

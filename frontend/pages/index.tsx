@@ -1,11 +1,15 @@
-import React from 'react';
+import React from "react";
+import styles from "@styles/index.module.scss";
+import Layout from "components/StyledComponents/Layout.styled";
 
-type indexProps = {
-  
+type indexProps = {};
+
+const index: React.FC<indexProps> = () => {
+  return (
+    <Layout.Centered padding>
+      <div className={styles.main} />;
+    </Layout.Centered>
+  );
 };
 
-const index:React.FC<indexProps> = () => {
-  
-  return <div>Have a good coding</div>
-}
 export default index;
