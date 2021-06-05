@@ -24,6 +24,15 @@
   }
 }
 
+.logo_title:hover {
+  span:nth-child(1) {
+    color: var(--ember-dark);
+  }
+  span:nth-child(2) {
+    color: var(--lavender-dark);
+  }
+}
+
 .nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -36,6 +45,36 @@
   cursor: pointer;
   text-align: center;
   border-radius: 8px;
+}
+
+.nav_option--lavender {
+  .nav_option__text {
+    transition: none;
+  }
+  &:hover .nav_option__text {
+    background: linear-gradient(
+      to right,
+      var(--lavender-dark),
+      var(--lavender-light)
+    );
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.nav_option--ember {
+  .nav_option__text {
+    transition: none;
+  }
+  &:hover .nav_option__text {
+    background: linear-gradient(
+      to right,
+      var(--ember-dark),
+      var(--ember-light)
+    );
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 @media only screen and (min-width: 380px) {

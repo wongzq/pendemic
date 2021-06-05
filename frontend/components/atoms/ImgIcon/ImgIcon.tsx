@@ -14,26 +14,28 @@ const ImgIcon: React.FC<ImgIconProps> = ({ icon, className = "" }) => {
   switch (icon) {
     case ImgIcons.LogoPendemic:
       return (
-        <Image
-          className={className}
-          layout="intrinsic"
-          width={40}
-          height={40}
-          src={Pendemic}
-          alt="Logo"
-        />
+        <div className={className}>
+          <Image
+            layout="intrinsic"
+            width={40}
+            height={40}
+            src={Pendemic}
+            alt="Logo"
+          />
+        </div>
       );
 
     case ImgIcons.LogoPendemicDark:
       return (
-        <Image
-          className={className}
-          layout="intrinsic"
-          width={40}
-          height={40}
-          src={PendemicDark}
-          alt="Logo"
-        />
+        <div className={className}>
+          <Image
+            layout="intrinsic"
+            width={40}
+            height={40}
+            src={PendemicDark}
+            alt="Logo"
+          />
+        </div>
       );
 
     default:

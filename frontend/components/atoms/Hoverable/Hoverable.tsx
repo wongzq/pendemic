@@ -3,21 +3,21 @@ import styles from "./Hoverable.module.scss";
 import React from "react";
 import classNames from "classnames";
 import { HoverableUnderlineLine } from "./Hoverable.styled";
-import { Coord, DivMouseEvent } from "@models/auxiliary.model";
+import { Coord, DivMouseEvent } from "./Hoverable.model";
 
 // --------------------------------------------------------------------------------
 // Hoverable Underline
 // --------------------------------------------------------------------------------
-type HoverableUnerlineState = "HIDDEN" | "VISIBLE" | "EXPANDED";
+type UnerlineState = "HIDDEN" | "VISIBLE" | "EXPANDED";
 
-type HoverableUnderlineProps = {
-  color: "primary" | "white";
+type UnderlineProps = {
+  color: "lavender" | "ember";
   height?: 2 | 4;
   delayed?: boolean;
   centered?: boolean;
 };
 
-export const HoverableUnderline: React.FC<HoverableUnderlineProps> = ({
+const Underline: React.FC<UnderlineProps> = ({
   color,
   height,
   delayed = false,
@@ -25,8 +25,7 @@ export const HoverableUnderline: React.FC<HoverableUnderlineProps> = ({
   children,
 }) => {
   // useState
-  const [hoverState, setHoverState] =
-    React.useState<HoverableUnerlineState>("HIDDEN");
+  const [hoverState, setHoverState] = React.useState<UnerlineState>("HIDDEN");
 
   // custom functions
   const onFocus = () => {
@@ -79,15 +78,12 @@ export const HoverableUnderline: React.FC<HoverableUnderlineProps> = ({
 // --------------------------------------------------------------------------------
 // Hoverable Fade
 // --------------------------------------------------------------------------------
-type HoverableFadeProps = {
+type FadeProps = {
   origin: JSX.Element;
   hovered: JSX.Element;
 };
 
-export const HoverableFade: React.FC<HoverableFadeProps> = ({
-  origin,
-  hovered,
-}) => {
+const Fade: React.FC<FadeProps> = ({ origin, hovered }) => {
   // useState
   const [isHovered, setIsHovered] = React.useState(false);
 
@@ -136,13 +132,11 @@ export const HoverableFade: React.FC<HoverableFadeProps> = ({
 // --------------------------------------------------------------------------------
 // Hoverable Ripple
 // --------------------------------------------------------------------------------
-type HoverableRippleProps = {
+type RippleProps = {
   color?: "white" | "grey";
 };
 
-export const HoverableRipple: React.FC<HoverableRippleProps> = ({
-  color = "white",
-}) => {
+const Ripple: React.FC<RippleProps> = ({ color = "white" }) => {
   // useState
   const [coords, setCoords] = React.useState<Coord>({ x: -1, y: -1 });
   const [isRippling, setIsRippling] = React.useState(false);
@@ -186,3 +180,11 @@ export const HoverableRipple: React.FC<HoverableRippleProps> = ({
     </div>
   );
 };
+
+const Hoverable = {
+  Underline,
+  Fade,
+  Ripple,
+};
+
+export default Hoverable;
