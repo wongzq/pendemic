@@ -31,7 +31,7 @@ const Navigation: React.FC<NavigationProps> = () => {
       <nav className={styles.main}>
         <Link href={NextRoutes.home}>
           <div className={styles.logo}>
-            <ImgIcon icon={ImgIcons.LogoPendemicDark} />
+            <ImgIcon icon={ImgIcons.LogoPendemic} />
             <Text.P size="s" weight="semibold">
               <Text.Span color="ember" family="lora">
                 Pen
