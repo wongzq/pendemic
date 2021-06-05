@@ -1,5 +1,5 @@
 {
-  "name": "with-typescript",
+  "name": "pendemic",
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev -p 80",
@@ -27,7 +27,8 @@
     "@types/sass": "^1.16.0",
     "@types/styled-components": "^5.1.9",
     "babel-plugin-styled-components": "^1.12.0",
-    "typescript": "4.0"
+    "typescript": "4.0",
+    "webpack": "^5.38.1"
   },
   "license": "MIT"
 }
