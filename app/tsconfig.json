@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": ["dom", "es2017"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["frontend/assets/*"],
+      "@components/*": ["frontend/components/*"],
+      "@hooks/*": ["frontend/hooks/*"],
+      "@models/*": ["frontend/models/*"],
+      "@routes/*": ["frontend/routes/*"],
+      "@styled/*": ["frontend/components/styled/*"],
+      "@styles/*": ["frontend/styles/*"],
+      "@utils/*": ["frontend/utils/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx", "next.config.js"]
+}
