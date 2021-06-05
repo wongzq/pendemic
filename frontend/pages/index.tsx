@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "@styles/index.module.scss";
-import Layout from "@sc/Layout.styled";
-import SvgIcon, { SvgIcons } from "@components/SvgIcon/SvgIcon";
-import Text from "@sc/Text.styled";
+import Layout from "@components/styled/Layout.styled";
+import SvgIcon, { SvgIcons } from "@components/atoms/SvgIcon/SvgIcon";
+import Text from "@components/styled/Text.styled";
 import HomePageHooks from "hooks/index.hooks";
 import classNames from "classnames";
 

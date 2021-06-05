@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import Text from "@sc/Text.styled"
+import Text from "@components/styled/Text.styled"
 
 type FooterProps = {};
 

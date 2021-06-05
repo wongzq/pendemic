@@ -12,36 +12,36 @@ const getColor = (props: StyledTextProps) =>
 
 const getFontSize = (props: StyledTextProps, fallback: string) =>
   props.size === "xxs"
-    ? "14rem"
+    ? "0.875rem"
     : props.size === "xs"
-    ? "16rem"
+    ? "1rem"
     : props.size === "s"
-    ? "20rem"
+    ? "1.25rem"
     : props.size === "m"
-    ? "24rem"
+    ? "1.5rem"
     : props.size === "l"
-    ? "32rem"
+    ? "2rem"
     : props.size === "xl"
-    ? "48rem"
+    ? "3rem"
     : props.size === "xxl"
-    ? "60rem"
+    ? "3.75rem"
     : fallback;
 
-const getXXSfontSize = (props: StyledTextProps) => getFontSize(props, "14rem");
-const getXSfontSize = (props: StyledTextProps) => getFontSize(props, "16rem");
-const getSfontSize = (props: StyledTextProps) => getFontSize(props, "20rem");
-const getMfontSize = (props: StyledTextProps) => getFontSize(props, "24rem");
-const getLfontSize = (props: StyledTextProps) => getFontSize(props, "32rem");
-const getXLfontSize = (props: StyledTextProps) => getFontSize(props, "48rem");
-const getXXLfontSize = (props: StyledTextProps) => getFontSize(props, "60rem");
+const getXXSfontSize = (props: StyledTextProps) => getFontSize(props, "0.875rem");
+const getXSfontSize = (props: StyledTextProps) => getFontSize(props, "1rem");
+const getSfontSize = (props: StyledTextProps) => getFontSize(props, "1.25rem");
+const getMfontSize = (props: StyledTextProps) => getFontSize(props, "1.5rem");
+const getLfontSize = (props: StyledTextProps) => getFontSize(props, "2rem");
+const getXLfontSize = (props: StyledTextProps) => getFontSize(props, "3rem");
+const getXXLfontSize = (props: StyledTextProps) => getFontSize(props, "3.75rem");
 
-const getMobileXXSfontSize = (props: StyledTextProps) => getFontSize(props, "14rem");
-const getMobileXSfontSize = (props: StyledTextProps) => getFontSize(props, "16rem");
-const getMobileSfontSize = (props: StyledTextProps) => getFontSize(props, "18rem");
-const getMobileMfontSize = (props: StyledTextProps) => getFontSize(props, "20rem");
-const getMobileLfontSize = (props: StyledTextProps) => getFontSize(props, "24rem");
-const getMobileXLfontSize = (props: StyledTextProps) => getFontSize(props, "32rem");
-const getMobileXXLfontSize = (props: StyledTextProps) => getFontSize(props, "48rem");
+const getMobileXXSfontSize = (props: StyledTextProps) => getFontSize(props, "0.875rem");
+const getMobileXSfontSize = (props: StyledTextProps) => getFontSize(props, "1rem");
+const getMobileSfontSize = (props: StyledTextProps) => getFontSize(props, "1.125rem");
+const getMobileMfontSize = (props: StyledTextProps) => getFontSize(props, "1.25rem");
+const getMobileLfontSize = (props: StyledTextProps) => getFontSize(props, "1.5rem");
+const getMobileXLfontSize = (props: StyledTextProps) => getFontSize(props, "2rem");
+const getMobileXXLfontSize = (props: StyledTextProps) => getFontSize(props, "3rem");
 
 const getFontWeight = (props: StyledTextProps) =>
   props.weight === "bold"

@@ -5,12 +5,12 @@ interface StyledPageProps {
 }
 
 const getPadding = (props: StyledPageProps) =>
-  props.padding ? "0rem 24rem" : "";
+  props.padding ? "0rem 1.5rem" : "";
 
 const Centered = styled.div`
   width: 100%;
   height: 100%;
-  max-width: 1440rem;
+  max-width: 90rem;
   align-self: center;
   padding: ${getPadding};
   background: var(--white);

@@ -11,8 +11,8 @@
     "quote";
   width: 100%;
   height: 50vh;
-  max-width: 400rem;
-  margin-top: 48rem;
+  max-width: 25rem;
+  margin-top: 3rem;
   overflow: hidden;
 }
 
@@ -23,7 +23,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 240rem;
+  min-height: 15rem;
 
   // width: 100%;
   // padding-bottom: 100%;
@@ -74,9 +74,9 @@
 
 h1.txt_quote {
   grid-area: quote;
-  margin-top: 120rem;
-  margin-bottom: 60rem;
-  max-width: 480rem;
+  margin-top: 7.5rem;
+  margin-bottom: 3.75rem;
+  max-width: 30rem;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -93,11 +93,11 @@ h1.txt_quote {
   &::before {
     content: "";
     position: absolute;
-    top: -60rem;
+    top: -3.75rem;
     left: 0;
     width: 100%;
-    height: 8rem;
-    border-radius: 4rem;
+    height: 0.5rem;
+    border-radius: 0.25rem;
     background: linear-gradient(
       to right,
       var(--lavender-light),
@@ -107,7 +107,7 @@ h1.txt_quote {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 64rem) {
   .main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -130,7 +130,7 @@ h1.txt_quote {
     }
     &.plan_hovered > g > path {
       fill: var(--lavender-light);
-      filter: drop-shadow(0rem 8rem 8rem var(--shadow));
+      filter: drop-shadow(0rem 0.5rem 0.5rem var(--shadow));
     }
   }
 
@@ -141,7 +141,7 @@ h1.txt_quote {
     }
     &.write_hovered > g > path {
       fill: var(--ember-light);
-      filter: drop-shadow(4rem 8rem 8rem var(--shadow));
+      filter: drop-shadow(0.25rem 0.5rem 0.5rem var(--shadow));
     }
   }
 
@@ -149,7 +149,7 @@ h1.txt_quote {
     align-self: center;
     justify-content: center;
     width: 100%;
-    height: 100rem;
+    height: 6.25rem;
 
     & > h1 {
       position: absolute;
@@ -166,12 +166,12 @@ h1.txt_quote {
     }
     &.plan_hovered > h1 {
       color: var(--lavender-light);
-      text-shadow: 0rem 2rem 4rem var(--shadow);
+      text-shadow: 0rem 0.125rem 0.25rem var(--shadow);
       transform: translateY(-50%);
     }
     &.plan_hovered > h2 {
       opacity: 1;
-      text-shadow: 0rem 2rem 4rem var(--shadow);
+      text-shadow: 0rem 0.125rem 0.25rem var(--shadow);
       transform: translateY(50%);
     }
   }
@@ -180,7 +180,7 @@ h1.txt_quote {
     align-self: center;
     justify-content: center;
     width: 100%;
-    height: 100rem;
+    height: 6.25rem;
 
     & > h1 {
       position: absolute;
@@ -197,12 +197,12 @@ h1.txt_quote {
     }
     &.write_hovered > h1 {
       color: var(--ember-light);
-      text-shadow: 0rem 2rem 4rem var(--shadow);
+      text-shadow: 0rem 0.125rem 0.25rem var(--shadow);
       transform: translateY(-50%);
     }
     &.write_hovered > h2 {
       opacity: 1;
-      text-shadow: 0rem 2rem 4rem var(--shadow);
+      text-shadow: 0rem 0.125rem 0.25rem var(--shadow);
       transform: translateY(50%);
     }
   }

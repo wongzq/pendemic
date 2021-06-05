@@ -1,7 +1,7 @@
 .main {
-  height: 48rem;
+  height: 48px;
   background: var(--white);
-  padding: 0rem 24rem;
+  padding: 0px 24px;
 
   display: flex;
   flex-direction: row;
@@ -13,34 +13,34 @@
   flex-direction: row;
   align-items: center;
   cursor: pointer;
-  padding: 4rem 0rem;
+  padding: 4px 0px;
 
   & > p {
     display: none;
   }
 
   & > * + * {
-    margin: 0 0 0 8rem;
+    margin: 0 0 0 8px;
   }
 }
 
 .nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 0rem;
+  column-gap: 0px;
   align-items: center;
 }
 
 .nav_option {
-  padding: 8rem;
+  padding: 8px;
   cursor: pointer;
   text-align: center;
-  border-radius: 8rem;
+  border-radius: 8px;
 }
 
 @media only screen and (min-width: 380px) {
   .nav {
-    column-gap: 24rem;
+    column-gap: 24px;
   }
 
   .logo {

@@ -23,7 +23,7 @@
       "@components/*": ["components/*"],
       "@models/*": ["models/*"],
       "@routes/*": ["routes/*"],
-      "@sc/*": ["components/StyledComponents/*"],
+      "@styled/*": ["components/styled/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"]
     }
