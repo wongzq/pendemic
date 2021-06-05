@@ -16,20 +16,20 @@ const index: React.FC<indexProps> = () => {
     refTxtWrite,
     planHovered,
     writeHovered,
-  } = HomePageHooks.usePendemicHover();
+  } = HomePageHooks.usePendemicLogo();
 
   const svgPlanClassNames = classNames(styles.svg_plan, {
     [styles.plan_hovered]: planHovered,
   });
-
   const svgWriteClassNames = classNames(styles.svg_write, {
     [styles.write_hovered]: writeHovered,
   });
+  const svgPlanTclassNames = classNames(styles.svg_plan);
+  const svgWriteTclassNames = classNames(styles.svg_write);
 
   const txtPlanClassNames = classNames(styles.txt_plan, {
     [styles.plan_hovered]: planHovered,
   });
-
   const txtWriteClassNames = classNames(styles.txt_write, {
     [styles.write_hovered]: writeHovered,
   });
@@ -37,6 +37,15 @@ const index: React.FC<indexProps> = () => {
   return (
     <Layout.Centered padding>
       <div className={styles.main}>
+        <div className={txtPlanClassNames} ref={refTxtPlan}>
+          <Text.H1 weight="bold" family="catamaran">
+            Plan
+          </Text.H1>
+          <Text.H2 size="m" color="grey" weight="semibold" family="catamaran">
+            Draft your characters, plot and setting
+          </Text.H2>
+        </div>
+
         <div className={styles.logo}>
           <SvgIcon
             icon={SvgIcons.PendemicPlan}
@@ -48,35 +57,31 @@ const index: React.FC<indexProps> = () => {
             className={svgWriteClassNames}
             ref={refSvgWrite}
           />
-
-          <div className={txtPlanClassNames} ref={refTxtPlan}>
-            <Text.H1 color="lavender" weight="bold" font="catamaran">
-              Plan
-            </Text.H1>
-            <Text.H4 color="grey" weight="semibold" font="catamaran">
-              Flesh out your characters, plot and setting
-            </Text.H4>
-          </div>
-
-          <div className={txtWriteClassNames} ref={refTxtWrite}>
-            <Text.H1 color="ember" weight="bold" font="catamaran">
-              Write
-            </Text.H1>
-            <Text.H4 color="grey" weight="semibold" font="catamaran">
-              Compose your thoughts into a novel
-            </Text.H4>
-          </div>
+          <SvgIcon
+            icon={SvgIcons.PendemicPlanTransparent}
+            className={svgPlanTclassNames}
+            ref={refSvgPlan}
+          />
+          <SvgIcon
+            icon={SvgIcons.PendemicWriteTransparent}
+            className={svgWriteTclassNames}
+            ref={refSvgWrite}
+          />
         </div>
 
-        <Text.H1 weight="semibold">
-          <Text.Span color="lavender" font="catamaran">
-            All in
-          </Text.Span>{" "}
-          <Text.Span color="ember" font="catamaran">
-            one place!
-          </Text.Span>
-        </Text.H1>
+        <div className={txtWriteClassNames} ref={refTxtWrite}>
+          <Text.H1 weight="bold" family="catamaran">
+            Write
+          </Text.H1>
+          <Text.H2 size="m" color="grey" weight="semibold" family="catamaran">
+            Compose your thoughts into a novel
+          </Text.H2>
+        </div>
       </div>
+
+      <Text.H1 weight="semibold" className={styles["txt_quote"]}>
+        All in one place
+      </Text.H1>
     </Layout.Centered>
   );
 };

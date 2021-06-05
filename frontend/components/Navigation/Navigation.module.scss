@@ -15,7 +15,7 @@
   cursor: pointer;
   padding: 4rem 0rem;
 
-  & > h5 {
+  & > p {
     display: none;
   }
 
@@ -27,7 +27,7 @@
 .nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 24rem;
+  column-gap: 0rem;
   align-items: center;
 }
 
@@ -38,9 +38,13 @@
   border-radius: 8rem;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 380px) {
+  .nav {
+    column-gap: 24rem;
+  }
+
   .logo {
-    & > h5 {
+    & > p {
       display: inline;
     }
   }

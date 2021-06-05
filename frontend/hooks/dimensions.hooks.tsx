@@ -26,13 +26,6 @@ const useDimensions = () => {
   const isLaptop = is1024 && !is1200;
   const isDesktop = is1200;
 
-  isMini && console.log("Mini: " + isMini);
-  isMobile && console.log("Mobile: " + isMobile);
-  isTabletPortrait && console.log("TabletPortrait: " + isTabletPortrait);
-  isTabletLandscape && console.log("TabletLandscape: " + isTabletLandscape);
-  isLaptop && console.log("Laptop: " + isLaptop);
-  isDesktop && console.log("Desktop: " + isDesktop);
-
   return {
     isMini,
     isMobile,
@@ -43,8 +36,8 @@ const useDimensions = () => {
   };
 };
 
-const MediaQueryHooks = {
+const DimensionsHooks = {
   useDimensions,
 };
 
-export default MediaQueryHooks;
+export default DimensionsHooks;

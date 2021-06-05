@@ -19,7 +19,7 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@assets/*": ["public/assets/*"],
+      "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
       "@models/*": ["models/*"],
       "@routes/*": ["routes/*"],

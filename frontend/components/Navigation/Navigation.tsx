@@ -5,7 +5,7 @@ import Text from "@sc/Text.styled";
 import Layout from "@sc/Layout.styled";
 import Link from "next/link";
 import NextRoutes from "@routes/next.routes";
-import MediaQueryHooks from "hooks/media-query.hooks";
+import DimensionsHooks from "hooks/dimensions.hooks";
 
 type NavOptionProps = { route: string; children: string };
 
@@ -13,7 +13,7 @@ const NavOption: React.FC<NavOptionProps> = ({ route, children }) => {
   return (
     <div className={styles.nav_option}>
       <Link href={route}>
-        <Text.H6>{children}</Text.H6>
+        <Text.P size="xs">{children}</Text.P>
       </Link>
     </div>
   );
@@ -24,7 +24,7 @@ type NavigationProps = {};
 const Navigation: React.FC<NavigationProps> = () => {
   const loggedIn = false;
 
-  const {} = MediaQueryHooks.useDimensions();
+  const {} = DimensionsHooks.useDimensions();
 
   return (
     <Layout.Centered>
@@ -32,14 +32,14 @@ const Navigation: React.FC<NavigationProps> = () => {
         <Link href={NextRoutes.home}>
           <div className={styles.logo}>
             <ImgIcon icon={ImgIcons.LogoPendemicDark} />
-            <Text.H5 weight="semibold">
-              <Text.Span color="ember" font="lora">
+            <Text.P size="s" weight="semibold">
+              <Text.Span color="ember" family="lora">
                 Pen
               </Text.Span>
-              <Text.Span color="lavender" font="lora">
+              <Text.Span color="lavender" family="lora">
                 demic
               </Text.Span>
-            </Text.H5>
+            </Text.P>
           </div>
         </Link>
 
