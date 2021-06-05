@@ -18,15 +18,14 @@ const index: React.FC<indexProps> = () => {
     writeHovered,
   } = HomePageHooks.usePendemicLogo();
 
+  const svgPlanTclassNames = classNames(styles.svg_plan);
+  const svgWriteTclassNames = classNames(styles.svg_write);
   const svgPlanClassNames = classNames(styles.svg_plan, {
     [styles.plan_hovered]: planHovered,
   });
   const svgWriteClassNames = classNames(styles.svg_write, {
     [styles.write_hovered]: writeHovered,
   });
-  const svgPlanTclassNames = classNames(styles.svg_plan);
-  const svgWriteTclassNames = classNames(styles.svg_write);
-
   const txtPlanClassNames = classNames(styles.txt_plan, {
     [styles.plan_hovered]: planHovered,
   });

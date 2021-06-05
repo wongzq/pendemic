@@ -6,6 +6,7 @@ import Layout from "@styled/Layout.styled";
 import Link from "next/link";
 import NextRoutes from "@routes/next.routes";
 import Hoverable from "@components/atoms/Hoverable/Hoverable";
+import classNames from "classnames";
 
 type NavOptionProps = {
   color: "lavender" | "ember";
@@ -15,15 +16,15 @@ type NavOptionProps = {
 
 const NavOption: React.FC<NavOptionProps> = ({ color, route, children }) => {
   return (
-    <div className={styles[`nav_option--${color}`]}>
+    <div
+      className={classNames(styles.nav_option, styles[`nav_option--${color}`])}
+    >
       <Hoverable.Underline color={color} height={4}>
-        <div className={styles.nav_option}>
-          <Link href={route}>
-            <Text.P size="xs" className={styles["nav_option__text"]}>
-              {children}
-            </Text.P>
-          </Link>
-        </div>
+        <Link href={route}>
+          <Text.P size="xs" className={styles["nav_option__text"]}>
+            {children}
+          </Text.P>
+        </Link>
       </Hoverable.Underline>
     </div>
   );
