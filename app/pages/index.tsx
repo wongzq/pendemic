@@ -81,6 +81,7 @@ const index: React.FC<indexProps> = () => {
       <Text.H1 weight="semibold" className={styles["txt_quote"]}>
         All in one place
       </Text.H1>
+      <div></div>
     </Layout.Centered>
   );
 };

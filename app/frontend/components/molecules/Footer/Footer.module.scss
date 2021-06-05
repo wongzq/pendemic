@@ -4,8 +4,21 @@
   justify-self: flex-end;
   align-items: center;
   justify-content: center;
-  color: var(--white-semi);
   width: 100%;
   padding: 1rem 0rem;
-  border-top: 0.0625rem solid var(--grey);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 0.0625rem;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--grey-light),
+    transparent
+  );
 }

@@ -36,7 +36,7 @@ const Navigation: React.FC<NavigationProps> = () => {
   const loggedIn = false;
 
   return (
-    <Layout.Centered>
+    <Layout.Nav>
       <nav className={styles.main}>
         {loggedIn ? (
           <div className={styles.nav_1}>
@@ -83,7 +83,7 @@ const Navigation: React.FC<NavigationProps> = () => {
           </div>
         )}
       </nav>
-    </Layout.Centered>
+    </Layout.Nav>
   );
 };
 

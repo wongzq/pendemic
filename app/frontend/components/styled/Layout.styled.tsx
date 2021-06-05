@@ -18,6 +18,18 @@ const Centered = styled.div`
   flex-direction: column;
 `;
 
-const Layout = { Centered };
+const Nav = styled.div`
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  padding: ${getPadding};
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.125rem 0.25rem var(--shadow);
+  z-index: 1;
+`;
+
+const Layout = { Centered, Nav };
 
 export default Layout;

@@ -5,6 +5,7 @@ interface StyledTextProps {
     | "white"
     | "black"
     | "grey"
+    | "grey-light"
     | "lavender"
     | "ember"
     | "lavender-dark"
@@ -86,7 +87,7 @@ const H1 = styled.h1<StyledTextProps>`
   font-weight: ${getFontWeight};
   font-family: ${getFontFamily};
   line-height: 125%;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 48rem) {
     font-size: ${getXXLfontSize};
   }
 `;
@@ -97,7 +98,7 @@ const H2 = styled.h2<StyledTextProps>`
   font-weight: ${getFontWeight};
   font-family: ${getFontFamily};
   line-height: 125%;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 48rem) {
     font-size: ${getXLfontSize};
   }
 `;
@@ -108,7 +109,7 @@ const H3 = styled.h3<StyledTextProps>`
   font-weight: ${getFontWeight};
   font-family: ${getFontFamily};
   line-height: 125%;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 48rem) {
     font-size: ${getLfontSize};
   }
 `;
@@ -119,7 +120,7 @@ const H4 = styled.h4<StyledTextProps>`
   font-weight: ${getFontWeight};
   font-family: ${getFontFamily};
   line-height: 125%;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 48rem) {
     font-size: ${getMfontSize};
   }
 `;
@@ -130,7 +131,7 @@ const H5 = styled.h5<StyledTextProps>`
   font-weight: ${getFontWeight};
   font-family: ${getFontFamily};
   line-height: 125%;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 48rem) {
     font-size: ${getSfontSize};
   }
 `;
@@ -141,7 +142,7 @@ const H6 = styled.h6<StyledTextProps>`
   font-weight: ${getFontWeight};
   font-family: ${getFontFamily};
   line-height: 125%;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 48rem) {
     font-size: ${getXSfontSize};
   }
 `;
@@ -152,7 +153,7 @@ const P = styled.p<StyledTextProps>`
   font-weight: ${getFontWeight};
   font-family: ${getFontFamily};
   line-height: 125%;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 48rem) {
     font-size: ${getXXSfontSize};
   }
 `;
