@@ -16,15 +16,13 @@ The name originates from the words **_pen_** and **_pandemic_**, meant to repres
 
 - ### Frontend:
   - `NextJS`, `ReactJS`
-  - State Management:
-    - `React-Redux`, `React Context API`
-  - Styling:
-    - `SCSS`, `styled-components`
+  - `React-Redux`, `React Context API`
+  - `SCSS`, `styled-components`
 - ### Backend:
   - `NextJS`, `ExpressJS`, `NodeJS`
 - ### Database:
-  - `Heroku ClearDB`, `(MySQL)`
-  - `Firebase Cloud Firestore`, `(NoSQL Document DB)`
+  - `Heroku ClearDB (MySQL)`
+  - `Firebase Cloud Firestore (NoSQL Document Store)`
 - ## Deployment:
   - `Vercel`
 
