@@ -1,17 +1,17 @@
-CREATE TABLE `writer` (
+CREATE TABLE IF NOT EXISTS `writer` (
   `writer_id` int PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(255) UNIQUE NOT NULL,
   `name` varchar(255) NOT NULL
 );
 
-CREATE TABLE `story` (
+CREATE TABLE IF NOT EXISTS `story` (
   `writer_id` int NOT NULL,
   `story_id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `description` text
 );
 
-CREATE TABLE `plot` (
+CREATE TABLE IF NOT EXISTS `plot` (
   `story_id` int NOT NULL,
   `plot_id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE `plot` (
   `order` int NOT NULL
 );
 
-CREATE TABLE `plotpoint` (
+CREATE TABLE IF NOT EXISTS `plotpoint` (
   `story_id` int NOT NULL,
   `plot_id` int NOT NULL,
   `plotpoint_id` int PRIMARY KEY AUTO_INCREMENT,
@@ -28,7 +28,7 @@ CREATE TABLE `plotpoint` (
   `order` int NOT NULL
 );
 
-CREATE TABLE `character` (
+CREATE TABLE IF NOT EXISTS `character` (
   `story_id` int NOT NULL,
   `character_id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE `character` (
   `order` int NOT NULL
 );
 
-CREATE TABLE `characterrelationship` (
+CREATE TABLE IF NOT EXISTS `characterrelationship` (
   `character_id_1` int NOT NULL,
   `character_id_2` int NOT NULL,
   `relationship_1_to_2` varchar(255) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `characterrelationship` (
   PRIMARY KEY (`character_id_1`, `character_id_2`)
 );
 
-CREATE TABLE `setting` (
+CREATE TABLE IF NOT EXISTS `setting` (
   `story_id` int NOT NULL,
   `setting_id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE `setting` (
   `order` int NOT NULL
 );
 
-CREATE TABLE `chapter` (
+CREATE TABLE IF NOT EXISTS `chapter` (
   `story_id` int NOT NULL,
   `chapter_id` int PRIMARY KEY AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -60,19 +60,19 @@ CREATE TABLE `chapter` (
   `order` int NOT NULL
 );
 
-CREATE TABLE `plotpointchapter` (
+CREATE TABLE IF NOT EXISTS `plotpointchapter` (
   `plotpoint_id` int NOT NULL,
   `chapter_id` int NOT NULL,
   PRIMARY KEY (`plotpoint_id`, `chapter_id`)
 );
 
-CREATE TABLE `plotpointcharacter` (
+CREATE TABLE IF NOT EXISTS `plotpointcharacter` (
   `plotpoint_id` int NOT NULL,
   `character_id` int NOT NULL,
   PRIMARY KEY (`plotpoint_id`, `character_id`)
 );
 
-CREATE TABLE `plotpointsetting` (
+CREATE TABLE IF NOT EXISTS `plotpointsetting` (
   `plotpoint_id` INT NOT NULL,
   `setting_id` INT NOT NULL,
   PRIMARY KEY (`plotpoint_id`, `setting_id`)
