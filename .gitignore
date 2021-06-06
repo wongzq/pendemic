@@ -31,6 +31,9 @@ app/yarn-error.log*
 # vercel
 app/.vercel
 
+# log
+pendemic-backend.log
+
 # ----------------------------------------
 # database
 # ----------------------------------------

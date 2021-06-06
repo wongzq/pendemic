@@ -14,6 +14,7 @@ const FirebaseConfig = {
 
     firebase.apps.length ? firebase.app() : firebase.initializeApp(config);
     firebase.analytics();
+    firebase.performance();
   },
 };
 
