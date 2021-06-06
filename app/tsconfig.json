@@ -21,12 +21,16 @@
     "paths": {
       "@assets/*": ["frontend/assets/*"],
       "@components/*": ["frontend/components/*"],
+      "@configs/*": ["frontend/configs/*"],
       "@hooks/*": ["frontend/hooks/*"],
       "@models/*": ["frontend/models/*"],
       "@routes/*": ["frontend/routes/*"],
       "@styled/*": ["frontend/components/styled/*"],
       "@styles/*": ["frontend/styles/*"],
-      "@utils/*": ["frontend/utils/*"]
+      "@utils/*": ["frontend/utils/*"],
+      "#configs/*": ["backend/configs/*"],
+      "#middlewares/*": ["backend/middlewares/*"],
+      "#types/*": ["backend/types/*"]
     }
   },
   "exclude": ["node_modules"],

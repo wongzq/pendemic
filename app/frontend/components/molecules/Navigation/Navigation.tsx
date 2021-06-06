@@ -7,10 +7,11 @@ import Link from "next/link";
 import NextRoutes from "@routes/next.routes";
 import Hoverable from "@components/atoms/Hoverable/Hoverable";
 import classNames from "classnames";
+import NavigationHook from "./Navigation.hook";
 
 type NavOptionProps = {
   color: "lavender" | "ember";
-  route: string;
+  route?: string;
   children: string;
 };
 
@@ -20,11 +21,17 @@ const NavOption: React.FC<NavOptionProps> = ({ color, route, children }) => {
       className={classNames(styles.nav_option, styles[`nav_option--${color}`])}
     >
       <Hoverable.Underline color={color} height={4}>
-        <Link href={route}>
+        {route ? (
+          <Link href={route}>
+            <Text.P size="xs" className={styles["nav_option__text"]}>
+              {children}
+            </Text.P>
+          </Link>
+        ) : (
           <Text.P size="xs" className={styles["nav_option__text"]}>
             {children}
           </Text.P>
-        </Link>
+        )}
       </Hoverable.Underline>
     </div>
   );
@@ -34,6 +41,8 @@ type NavigationProps = {};
 
 const Navigation: React.FC<NavigationProps> = () => {
   const loggedIn = false;
+
+  const { login } = NavigationHook.useAuthentication();
 
   return (
     <Layout.Nav>
@@ -76,10 +85,8 @@ const Navigation: React.FC<NavigationProps> = () => {
             </NavOption>
           </div>
         ) : (
-          <div className={styles.nav_2}>
-            <NavOption route={NextRoutes.login} color="ember">
-              Login
-            </NavOption>
+          <div className={styles.nav_2} onClick={login}>
+            <NavOption color="ember">Login</NavOption>
           </div>
         )}
       </nav>
