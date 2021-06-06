@@ -19,7 +19,7 @@ const useAuthentication = () => {
 
       if (result.credential) {
         const credential: firebase.auth.OAuthCredential = result.credential;
-        const token = credential.accessToken;
+        // const token = credential.accessToken;
         console.log(credential);
         console.log(result.user);
       }

@@ -1,6 +1,6 @@
 import { ApiHandler } from "#types/api.type";
 
-const metadata: ApiHandler = async (req, res, next) => {
+const metadata: ApiHandler = async (req, _, next) => {
   try {
     const url = req.url;
     const ip = req.headers["x-forwarded-for"] ?? req.socket.remoteAddress;

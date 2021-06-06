@@ -2,7 +2,7 @@ import ServerConfig from "#configs/server.config";
 import "#configs/winston.config";
 import { ApiHandler } from "#types/api.type";
 
-const init: ApiHandler = async (req, res, next) => {
+const init: ApiHandler = async (_, __, next) => {
   try {
     global.logger.info(`${ServerConfig.ENV.capitalized} Server`);
     next();
@@ -11,7 +11,7 @@ const init: ApiHandler = async (req, res, next) => {
   }
 };
 
-const success: ApiHandler = async (req, res, next) => {
+const success: ApiHandler = async (req, _, next) => {
   try {
     return global.logger.success(req);
   } catch (err) {

@@ -7,7 +7,6 @@ const onError: ErrorHandler<NextApiRequest, NextApiResponse> = (
   err,
   req,
   res,
-  next
 ) => {
   if (err instanceof Exception) {
     global.logger.failure.warn(
