@@ -1,14 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
   // colors
   --test: #dddddd;
   --white: #ffffff;
   --black: #101010;
-  --grey: #4a4a4a;
-  --grey-light: #a0a0a0;
+  --grey: #a0a0a0;
+  --grey-dark: #4a4a4a;
+  --grey-light: #dadada;
   --lavender: #9966ff;
   --lavender-dark: #814ee7;
   --lavender-light: #b17eff;
@@ -40,6 +42,27 @@ a {
   text-decoration: none;
 }
 
+input {
+  padding: 0.25rem 0.5rem;
+  border: 0.125rem solid var(--grey-light);
+  border-radius: 0.5rem;
+  border-style: solid;
+  outline: none;
+  &:focus {
+    border: 0.125rem solid var(--grey);
+  }
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  background: white;
+  border: none;
+  border-radius: 0.25rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 * {
   position: relative;
   max-width: 100%;
@@ -67,14 +90,14 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--grey-light);
+  background: var(--grey);
   border-radius: 1rem;
   border: 0.3rem solid transparent;
   background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--grey-light);
+  background: var(--grey);
   border-radius: 1rem;
   border: 0.3rem solid transparent;
   background-clip: padding-box;

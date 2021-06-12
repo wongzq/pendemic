@@ -16,12 +16,23 @@ const useFirebaseAuth = () => {
     });
   }, []);
 
-  const login = async () => {
+  const signInWithGoogle = async () => {
     try {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      provider.addScope("https://www.googleapis.com/auth/userinfo.email");
-      provider.addScope("https://www.googleapis.com/auth/userinfo.profile");
-      await firebase.auth().signInWithPopup(provider);
+      const Gprovider = new firebase.auth.GoogleAuthProvider();
+      Gprovider.addScope("https://www.googleapis.com/auth/userinfo.email");
+      Gprovider.addScope("https://www.googleapis.com/auth/userinfo.profile");
+      await firebase.auth().signInWithPopup(Gprovider);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const signInWithFacebook = async () => {
+    try {
+      const FBprovider = new firebase.auth.FacebookAuthProvider();
+      FBprovider.addScope("public_profile")
+      FBprovider.addScope("email")
+      await firebase.auth().signInWithPopup(FBprovider);
     } catch (err) {
       console.error(err);
     }
@@ -35,7 +46,7 @@ const useFirebaseAuth = () => {
     }
   };
 
-  return { user, login, logout };
+  return { user, signInWithGoogle,signInWithFacebook, logout };
 };
 
 const AuthHook = { useFirebaseAuth };

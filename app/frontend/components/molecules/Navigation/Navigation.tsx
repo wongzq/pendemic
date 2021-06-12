@@ -44,19 +44,13 @@ const Navigation: React.FC<NavigationProps> = () => {
               Plan
             </NavOption>
           </div>
-        ) : (
-          <div className={styles.nav_1}>
-            <NavOption route={NextRoutes.signup} color="lavender">
-              Sign Up
-            </NavOption>
-          </div>
-        )}
+        ) : null}
 
         <Link href={NextRoutes.home}>
           <div className={styles.logo}>
             <Hoverable.Fade
-              origin={<ImgIcon icon={ImgIcons.LogoPendemic} />}
-              hovered={<ImgIcon icon={ImgIcons.LogoPendemicDark} />}
+              origin={<ImgIcon img={ImgIcons.LogoPendemic} />}
+              hovered={<ImgIcon img={ImgIcons.LogoPendemicDark} />}
             />
             <Text.P size="s" weight="semibold" className={styles.logo_title}>
               <Text.Span color="ember" family="lora">
@@ -77,8 +71,8 @@ const Navigation: React.FC<NavigationProps> = () => {
           </div>
         ) : (
           <div className={styles.nav_2}>
-            <NavOption route={NextRoutes.login} color="ember">
-              Login
+            <NavOption route={NextRoutes.signin} color="ember">
+              Sign In
             </NavOption>
           </div>
         )}

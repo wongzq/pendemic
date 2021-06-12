@@ -2,16 +2,20 @@ import React from "react";
 import Image from "next/image";
 import Pendemic from "@assets/img/logo-pendemic.png";
 import PendemicDark from "@assets/img/logo-pendemic-dark.png";
+import LogoGoogle from "@assets/img/logo-google.png";
+import LogoFacebook from "@assets/img/logo-facebook.png";
 
 export enum ImgIcons {
   LogoPendemic,
   LogoPendemicDark,
+  LogoGoogle,
+  LogoFacebook,
 }
 
-type ImgIconProps = { icon: ImgIcons; className?: string };
+type ImgIconProps = { img: ImgIcons; className?: string };
 
-const ImgIcon: React.FC<ImgIconProps> = ({ icon, className = "" }) => {
-  switch (icon) {
+const ImgIcon: React.FC<ImgIconProps> = ({ img, className = "" }) => {
+  switch (img) {
     case ImgIcons.LogoPendemic:
       return (
         <div className={className}>
@@ -37,6 +41,12 @@ const ImgIcon: React.FC<ImgIconProps> = ({ icon, className = "" }) => {
           />
         </div>
       );
+
+    case ImgIcons.LogoGoogle:
+      return <Image width={36} height={36} layout="fixed" src={LogoGoogle} />;
+
+    case ImgIcons.LogoFacebook:
+      return <Image width={36} height={36} layout="fixed" src={LogoFacebook} />;
 
     default:
       return null;
