@@ -1,6 +1,6 @@
 const NextRoutes = {
   home: "/",
-  signin: "/sign-in",
+  signIn: "/sign-in",
   logout: "/logout",
   plan: "/plan",
   write: "/write",

@@ -71,7 +71,7 @@ const Navigation: React.FC<NavigationProps> = () => {
           </div>
         ) : (
           <div className={styles.nav_2}>
-            <NavOption route={NextRoutes.signin} color="ember">
+            <NavOption route={NextRoutes.signIn} color="ember">
               Sign In
             </NavOption>
           </div>
