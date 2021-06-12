@@ -44,7 +44,13 @@ const Navigation: React.FC<NavigationProps> = () => {
               Plan
             </NavOption>
           </div>
-        ) : null}
+        ) : (
+          <div className={styles.nav_1}>
+            <NavOption route={NextRoutes.home} color="lavender">
+              Home
+            </NavOption>
+          </div>
+        )}
 
         <Link href={NextRoutes.home}>
           <div className={styles.logo}>

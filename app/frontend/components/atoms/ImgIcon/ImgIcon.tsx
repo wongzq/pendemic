@@ -43,10 +43,14 @@ const ImgIcon: React.FC<ImgIconProps> = ({ img, className = "" }) => {
       );
 
     case ImgIcons.LogoGoogle:
-      return <Image width={36} height={36} layout="fixed" src={LogoGoogle} />;
+      return (
+        <Image width={36} height={36} layout="intrinsic" src={LogoGoogle} />
+      );
 
     case ImgIcons.LogoFacebook:
-      return <Image width={36} height={36} layout="fixed" src={LogoFacebook} />;
+      return (
+        <Image width={36} height={36} layout="intrinsic" src={LogoFacebook} />
+      );
 
     default:
       return null;

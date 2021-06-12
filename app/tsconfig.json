@@ -29,7 +29,9 @@
       "@styles/*": ["frontend/styles/*"],
       "@utils/*": ["frontend/utils/*"],
       "#configs/*": ["backend/configs/*"],
+      "#helpers/*": ["backend/helpers/*"],
       "#middlewares/*": ["backend/middlewares/*"],
+      "#models/*": ["backend/models/*"],
       "#types/*": ["backend/types/*"]
     }
   },

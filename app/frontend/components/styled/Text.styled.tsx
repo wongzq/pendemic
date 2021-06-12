@@ -5,6 +5,7 @@ interface StyledTextProps {
     | "white"
     | "black"
     | "grey"
+    | "grey-dark"
     | "grey-light"
     | "lavender"
     | "ember"

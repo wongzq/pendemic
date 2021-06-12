@@ -14,6 +14,11 @@ const SignInPage: React.FC<SignInPageProps> = () => {
   return (
     <Layout.Centered padding>
       <div className={styles.main}>
+        <Text.H1 size="l" weight="semibold">
+          Join the Pendemic
+        </Text.H1>
+        <Text.H2 size="xs">Forging stories from thoughts</Text.H2>
+        <Text.H2 size="xs">Crafting art from chaos</Text.H2>
         <button
           className={classNames(styles.sign_in, styles.sign_in_google)}
           onClick={signInWithGoogle}

@@ -122,7 +122,6 @@ h1.txt_quote {
   .svg_plan {
     & > g {
       pointer-events: all;
-      cursor: pointer;
     }
     &.plan_hovered > g > path {
       fill: var(--lavender-light);
@@ -133,7 +132,6 @@ h1.txt_quote {
   .svg_write {
     & > g {
       pointer-events: all;
-      cursor: pointer;
     }
     &.write_hovered > g > path {
       fill: var(--ember-light);

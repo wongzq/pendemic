@@ -40,7 +40,7 @@ const index: React.FC<indexProps> = () => {
           <Text.H1 weight="bold" family="catamaran">
             Plan
           </Text.H1>
-          <Text.H2 size="m" color="grey" weight="semibold" family="catamaran">
+          <Text.H2 size="m" color="grey-dark" weight="semibold" family="catamaran">
             Draft your characters, plot and setting
           </Text.H2>
         </div>
@@ -72,7 +72,7 @@ const index: React.FC<indexProps> = () => {
           <Text.H1 weight="bold" family="catamaran">
             Write
           </Text.H1>
-          <Text.H2 size="m" color="grey" weight="semibold" family="catamaran">
+          <Text.H2 size="m" color="grey-dark" weight="semibold" family="catamaran">
             Compose your thoughts into a novel
           </Text.H2>
         </div>
