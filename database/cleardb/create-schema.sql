@@ -116,9 +116,7 @@ ADD
   UNIQUE `story_writer_id_name_unique`(`writer_id`, `name`);
 CREATE TABLE `writer`(
     `writer_id` VARCHAR(255) NOT NULL PRIMARY KEY,
-    `username` VARCHAR(255) NULL,
-    `name` VARCHAR(255) NOT NULL,
-    `photo_url` VARCHAR(1000) NULL
+    `username` VARCHAR(255) NULL
   );
 ALTER TABLE
   `writer`

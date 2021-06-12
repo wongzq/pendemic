@@ -5,8 +5,6 @@ import type { story, storyId } from './story';
 export interface writerAttributes {
   writer_id: string;
   username?: string;
-  name: string;
-  photo_url?: string;
 }
 
 export type writerPk = "writer_id";
@@ -16,8 +14,6 @@ export type writerCreationAttributes = Optional<writerAttributes, writerPk>;
 export class writer extends Model<writerAttributes, writerCreationAttributes> implements writerAttributes {
   writer_id!: string;
   username?: string;
-  name!: string;
-  photo_url?: string;
 
   // writer hasMany story via writer_id
   stories!: story[];
@@ -43,14 +39,6 @@ export class writer extends Model<writerAttributes, writerCreationAttributes> im
       type: DataTypes.STRING(255),
       allowNull: true,
       unique: "writer_username_unique"
-    },
-    name: {
-      type: DataTypes.STRING(255),
-      allowNull: false
-    },
-    photo_url: {
-      type: DataTypes.STRING(1000),
-      allowNull: true
     }
   }, {
     sequelize,

@@ -19,8 +19,6 @@ const signIn: ApiHandler = async (req, res, next) => {
     await Models.writer.create({
       writer_id: user.uid,
       username: undefined,
-      name: user.displayName ?? "",
-      photo_url: user.photoURL ?? undefined,
     });
   }
 
