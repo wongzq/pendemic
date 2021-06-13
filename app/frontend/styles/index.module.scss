@@ -27,13 +27,13 @@
 .svg_plan {
   position: absolute;
   pointer-events: none;
-  animation: slide-ltr 1s ease-out;
+  animation: slide-ltr 0.5s ease-out;
 }
 
 .svg_write {
   position: absolute;
   pointer-events: none;
-  animation: slide-rtl 1s ease-out;
+  animation: slide-rtl 0.5s ease-out;
 }
 
 .txt_plan {
@@ -41,7 +41,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  animation: slide-ltr 1.25s ease-out;
+  animation: slide-ltr 0.75s ease-out;
 
   & > h1 {
     text-align: left;
@@ -58,7 +58,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  animation: slide-rtl 1.25s ease-out;
+  animation: slide-rtl 0.75s ease-out;
 
   & > h1 {
     text-align: right;
@@ -86,7 +86,7 @@ h1.txt_quote {
   );
   background-clip: text;
   color: transparent;
-  animation: fade-in 2s ease-out;
+  animation: fade-in 1.25s ease-out;
 
   &::before {
     content: "";
@@ -109,19 +109,23 @@ h1.txt_quote {
 }
 
 @keyframes slide-ltr {
-  from {
-    transform: translateX(-100vw);
+  0% {
+    opacity: 0;
+    transform: translateX(-25vw);
   }
-  to {
+  100% {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 
 @keyframes slide-rtl {
-  from {
-    transform: translateX(100vw);
+  0% {
+    opacity: 0;
+    transform: translateX(25vw);
   }
-  to {
+  100% {
+    opacity: 1;
     transform: translateX(0);
   }
 }
@@ -129,7 +133,6 @@ h1.txt_quote {
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateX(-50%) scaleX(150%);
   }
   60% {
     opacity: 0;
