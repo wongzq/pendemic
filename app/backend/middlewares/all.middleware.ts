@@ -4,6 +4,9 @@ import LoggerMiddleware from "#middlewares/logger.middleware";
 import SecurityMiddleware from "#middlewares/security.middleware";
 import { ApiHandler, ApiMethod } from "#types/api.type";
 import { NextApiRequest, NextApiResponse } from "next";
+import dotenv from "dotenv";
+
+dotenv.config({ path: "/app/.env" });
 
 const chainHandler = (
   chain: NextConnect<NextApiRequest, NextApiResponse<any>>,
