@@ -26,7 +26,7 @@ const Nav = styled.div`
   background: var(--white);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0.125rem 0.25rem var(--shadow);
+  box-shadow: 0 0.0313rem 0.125rem var(--shadow);
   z-index: 1;
 `;
 
