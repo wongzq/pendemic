@@ -15,6 +15,7 @@ type UnderlineProps = {
   height?: 2 | 4;
   delayed?: boolean;
   centered?: boolean;
+  freeze?: boolean;
 };
 
 const Underline: React.FC<UnderlineProps> = ({
@@ -22,6 +23,7 @@ const Underline: React.FC<UnderlineProps> = ({
   height,
   delayed = false,
   centered = false,
+  freeze = false,
   children,
 }) => {
   // useState
@@ -58,19 +60,35 @@ const Underline: React.FC<UnderlineProps> = ({
       {children}
 
       {/* animated underline */}
-      <HoverableUnderlineLine
-        color={color}
-        height={height ?? 2}
-        className={classNames(styles["hoverable-underline__line"], {
-          [styles["hoverable-underline__line--centered"]]: centered,
-          [styles["hoverable-underline__line--hidden"]]:
-            hoverState === "HIDDEN",
-          [styles["hoverable-underline__line--visible"]]:
-            hoverState === "VISIBLE",
-          [styles["hoverable-underline__line--expanded"]]:
-            hoverState === "EXPANDED",
-        })}
-      />
+      {freeze ? (
+        <HoverableUnderlineLine
+          color={color}
+          height={height ?? 2}
+          className={classNames(styles["hoverable-underline__line"], {
+            [styles["hoverable-underline__line--centered"]]: centered,
+            [styles["hoverable-underline__line--hidden"]]:
+              hoverState === "HIDDEN",
+            [styles["hoverable-underline__line--visible"]]:
+              hoverState === "VISIBLE",
+            [styles["hoverable-underline__line--expanded"]]:
+              hoverState === "EXPANDED" || freeze,
+          })}
+        />
+      ) : (
+        <HoverableUnderlineLine
+          color={color}
+          height={height ?? 2}
+          className={classNames(styles["hoverable-underline__line"], {
+            [styles["hoverable-underline__line--centered"]]: centered,
+            [styles["hoverable-underline__line--hidden"]]:
+              hoverState === "HIDDEN",
+            [styles["hoverable-underline__line--visible"]]:
+              hoverState === "VISIBLE",
+            [styles["hoverable-underline__line--expanded"]]:
+              hoverState === "EXPANDED",
+          })}
+        />
+      )}
     </div>
   );
 };

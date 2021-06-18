@@ -9,11 +9,7 @@ const useFirebaseAuth = () => {
 
   React.useEffect(() => {
     FirebaseConfig.init();
-
-    firebase.auth().onAuthStateChanged(async (user) => {
-      setUser(user);
-      // if (user) ApiRoutes.signIn(user.uid);
-    });
+    firebase.auth().onAuthStateChanged(async (user) => setUser(user));
   }, []);
 
   const signInWithGoogle = async () => {

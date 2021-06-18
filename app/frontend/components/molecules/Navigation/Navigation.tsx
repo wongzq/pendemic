@@ -7,21 +7,33 @@ import Link from "next/link";
 import NextRoutes from "@routes/next.routes";
 import Hoverable from "@components/atoms/Hoverable/Hoverable";
 import classNames from "classnames";
+import AuthHook from "@hooks/auth.hook";
+import useNavigation from "./Navigation.hook";
 
 type NavOptionProps = {
   color: "lavender" | "ember";
   route: string;
+  selected?: boolean;
   children: string;
 };
 
-const NavOption: React.FC<NavOptionProps> = ({ color, route, children }) => {
+const NavOption: React.FC<NavOptionProps> = ({
+  color,
+  route,
+  selected,
+  children,
+}) => {
   return (
     <div
       className={classNames(styles.nav_option, styles[`nav_option--${color}`])}
     >
-      <Hoverable.Underline color={color} height={4}>
+      <Hoverable.Underline color={color} height={4} centered freeze={selected}>
         <Link href={route}>
-          <Text.P size="xs" className={styles["nav_option__text"]}>
+          <Text.P
+            size="xs"
+            color={selected ? color : undefined}
+            className={styles["nav_option__text"]}
+          >
             {children}
           </Text.P>
         </Link>
@@ -33,26 +45,35 @@ const NavOption: React.FC<NavOptionProps> = ({ color, route, children }) => {
 type NavigationProps = {};
 
 const Navigation: React.FC<NavigationProps> = () => {
-  const loggedIn = false;
+  const { user, logout } = AuthHook.useFirebaseAuth();
+
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  const { isPlanning, isWriting, isOptionsVisible, onClickOptions } =
+    useNavigation(ref);
 
   return (
     <Layout.Nav>
       <nav className={styles.main}>
-        {loggedIn ? (
+        {user ? (
           <div className={styles.nav_1}>
-            <NavOption route={NextRoutes.plan} color="lavender">
+            <NavOption
+              route={NextRoutes.routes.plan}
+              color="lavender"
+              selected={isPlanning}
+            >
               Plan
             </NavOption>
           </div>
         ) : (
           <div className={styles.nav_1}>
-            <NavOption route={NextRoutes.home} color="lavender">
+            <NavOption route={NextRoutes.routes.home} color="lavender">
               Home
             </NavOption>
           </div>
         )}
 
-        <Link href={NextRoutes.home}>
+        <Link href={NextRoutes.routes.home}>
           <div className={styles.logo}>
             <Hoverable.Fade
               origin={<ImgIcon img={ImgIcons.LogoPendemic} />}
@@ -69,17 +90,39 @@ const Navigation: React.FC<NavigationProps> = () => {
           </div>
         </Link>
 
-        {loggedIn ? (
+        {user ? (
           <div className={styles.nav_2}>
-            <NavOption route={NextRoutes.write} color="ember">
+            <NavOption
+              route={NextRoutes.routes.write}
+              color="ember"
+              selected={isWriting}
+            >
               Write
             </NavOption>
           </div>
         ) : (
           <div className={styles.nav_2}>
-            <NavOption route={NextRoutes.signIn} color="ember">
+            <NavOption route={NextRoutes.routes.signIn} color="ember">
               Sign In
             </NavOption>
+          </div>
+        )}
+
+        {user && (
+          <div ref={ref} className={styles.nav_options}>
+            <div
+              className={styles.nav_options_arrow}
+              onClick={onClickOptions}
+            />
+            <ul
+              className={classNames(styles.nav_options_menu, {
+                [styles.nav_options_menu_visible]: isOptionsVisible,
+              })}
+            >
+              <li>Profile</li>
+              <li>Settings</li>
+              <li onClick={logout}>Logout</li>
+            </ul>
           </div>
         )}
       </nav>

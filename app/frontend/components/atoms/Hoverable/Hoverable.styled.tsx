@@ -6,11 +6,6 @@ type HoverableunderlineLineProps = {
 };
 
 export const HoverableUnderlineLine = styled.div<HoverableunderlineLineProps>`
-  background: ${(props) =>
-    `linear-gradient(
-      to right,
-      var(--${props.color}),
-      var(--${props.color}-light),
-      transparent)`};
+  background: ${(props) => `var(--${props.color}-light)`};
   height: ${(props) => `${props.height}px`};
 `;
