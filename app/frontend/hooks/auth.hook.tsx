@@ -8,10 +8,7 @@ const useAuth = () => {
   const [user, setUser] = React.useState<firebase.User | null>(null);
 
   React.useEffect(() => {
-    FirebaseApp.auth().onAuthStateChanged(async (user) => {
-      if (user) await user.reload();
-      return setUser(user);
-    });
+    FirebaseApp.auth().onAuthStateChanged(async (user) => setUser(user));
     return () => setUser(null);
   }, []);
 
