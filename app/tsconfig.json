@@ -19,20 +19,17 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@assets/*": ["frontend/assets/*"],
-      "@components/*": ["frontend/components/*"],
+      "$assets/*": ["public/assets/*"],
+      "$types/*": ["types/*"],
+      "$utils/*": ["utils/*"],
       "@configs/*": ["frontend/configs/*"],
+      "@components/*": ["frontend/components/*"],
       "@hooks/*": ["frontend/hooks/*"],
-      "@models/*": ["frontend/models/*"],
       "@routes/*": ["frontend/routes/*"],
-      "@styled/*": ["frontend/components/styled/*"],
       "@styles/*": ["frontend/styles/*"],
-      "@utils/*": ["frontend/utils/*"],
       "#configs/*": ["backend/configs/*"],
-      "#helpers/*": ["backend/helpers/*"],
       "#middlewares/*": ["backend/middlewares/*"],
-      "#models/*": ["backend/models/*"],
-      "#types/*": ["backend/types/*"]
+      "#models/*": ["backend/models/*"]
     }
   },
   "exclude": ["node_modules"],

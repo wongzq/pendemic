@@ -1,5 +1,5 @@
 import HttpStatusCodes from "http-status-codes";
-import { Exception, Codes } from "#types/error.type";
+import { Exception, Codes } from "$types/error.type";
 import { ErrorHandler } from "next-connect";
 import { NextApiRequest, NextApiResponse } from "next";
 

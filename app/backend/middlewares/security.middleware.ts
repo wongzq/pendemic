@@ -1,4 +1,4 @@
-import { ApiHandler } from "#types/api.type";
+import { ApiHandler } from "$types/api-response.type";
 
 const metadata: ApiHandler = async (req, _, next) => {
   try {

@@ -1,9 +1,9 @@
 import moment from "moment-timezone";
 import winston from "winston";
-import ServerConfig from "#configs/server.config";
+import EnvConfig from "#configs/env.config";
 import { NextApiRequest } from "next";
 
-const level = ServerConfig.ENV.isDevelopment ? "debug" : "info";
+const level = EnvConfig.ENV.isDevelopment ? "debug" : "info";
 const levels = {
   none: 0,
   error: 1,
@@ -49,7 +49,7 @@ const Logger = winston.createLogger({
   transports: [
     new winston.transports.Console(),
     new winston.transports.File({
-      filename: ServerConfig.LOG_FILE,
+      filename: EnvConfig.LOG_FILE,
       format: customFormat,
     }),
   ],
@@ -114,7 +114,7 @@ const logger: LoggerType = {
         message: formatMessage("FAILURE", req, msg ? prettify(...msg) : ""),
       }),
   },
-  file: ServerConfig.LOG_FILE,
+  file: EnvConfig.LOG_FILE,
 };
 
 declare global {

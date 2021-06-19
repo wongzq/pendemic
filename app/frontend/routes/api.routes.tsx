@@ -1,4 +1,4 @@
-import { ApiResponse } from "#types/api.type";
+import { ApiResult } from "$types/api-result.type";
 import axios from "axios";
 import firebase from "firebase/app";
 
@@ -10,10 +10,10 @@ const ApiRoutes = {
 
       if (!res.data.success) throw Error();
 
-      return ApiResponse.success();
+      return ApiResult.success();
     } catch (err) {
       console.log(err);
-      return ApiResponse.failure();
+      return ApiResult.failure();
     }
   },
 };

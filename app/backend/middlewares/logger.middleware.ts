@@ -1,10 +1,10 @@
-import ServerConfig from "#configs/server.config";
+import EnvConfig from "#configs/env.config";
 import "#configs/winston.config";
-import { ApiHandler } from "#types/api.type";
+import { ApiHandler } from "$types/api-response.type";
 
 const init: ApiHandler = async (_, __, next) => {
   try {
-    global.logger.info(`${ServerConfig.ENV.capitalized} Server`);
+    global.logger.info(`${EnvConfig.ENV.capitalized} Server`);
     next();
   } catch (err) {
     next(err);

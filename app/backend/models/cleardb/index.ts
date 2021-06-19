@@ -1,13 +1,13 @@
-import ServerConfig from "#configs/server.config";
+import EnvConfig from "#configs/env.config";
 import { initModels } from "#models/cleardb/init-models";
 import { Sequelize } from "sequelize";
 
 const Models = initModels(
   new Sequelize({
-    host: ServerConfig.DB_HOST,
-    username: ServerConfig.DB_USER,
-    password: ServerConfig.DB_PSWD,
-    database: ServerConfig.DB_NAME,
+    host: EnvConfig.DB_HOST,
+    username: EnvConfig.DB_USER,
+    password: EnvConfig.DB_PSWD,
+    database: EnvConfig.DB_NAME,
     dialect: "mysql",
     dialectModule: require("mysql2"),
   })

@@ -2,7 +2,7 @@ import styles from "@styles/sign-in.module.scss";
 import Layout from "@components/styled/Layout.styled";
 import React from "react";
 import classNames from "classnames";
-import Text from "@styled/Text.styled";
+import Text from "@components/styled/Text.styled";
 import ImgIcon, { ImgIcons } from "@components/atoms/ImgIcon/ImgIcon";
 import AuthHook from "@hooks/auth.hook";
 

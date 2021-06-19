@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Pendemic from "@assets/img/logo-pendemic.png";
-import PendemicDark from "@assets/img/logo-pendemic-dark.png";
-import LogoGoogle from "@assets/img/logo-google.png";
-import LogoFacebook from "@assets/img/logo-facebook.png";
+import Pendemic from "$assets/img/logo-pendemic.png";
+import PendemicDark from "$assets/img/logo-pendemic-dark.png";
+import LogoGoogle from "$assets/img/logo-google.png";
+import LogoFacebook from "$assets/img/logo-facebook.png";
 
 export enum ImgIcons {
   LogoPendemic,

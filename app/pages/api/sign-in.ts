@@ -1,7 +1,8 @@
+import FirebaseAdmin from "#configs/firebase.config";
 import AllMiddleware from "#middlewares/all.middleware";
 import Models from "#models/cleardb";
-import { ApiHandler, ApiMethod, ApiResponse } from "#types/api.type";
-import { Codes, Exception } from "#types/error.type";
+import { ApiHandler, ApiMethod, ApiResponse } from "$types/api-response.type";
+import { Codes, Exception } from "$types/error.type";
 import firebase from "firebase/app";
 
 const signIn: ApiHandler = async (req, res, next) => {
@@ -11,6 +12,7 @@ const signIn: ApiHandler = async (req, res, next) => {
 
   if (!user?.uid) throw Exception.internal(Codes.NOT_FOUND, "User not found");
 
+  // check user in ClearDB
   const writer = await Models.writer.findOne({
     where: { writer_id: user.uid },
   });
@@ -21,6 +23,10 @@ const signIn: ApiHandler = async (req, res, next) => {
       username: undefined,
     });
   }
+
+  // check user in Firestore
+  const doc = await FirebaseAdmin.firestore().collection("users").doc(user.uid).get();
+  console.log(doc.data());
 
   const response = ApiResponse.success();
   res.json(response.json);

@@ -1,14 +1,14 @@
 import mysql from "mysql2";
-import ServerConfig from "./server.config";
+import EnvConfig from "#configs/env.config";
 
 export const pool = mysql
   .createPool({
     connectionLimit: 5,
-    host: ServerConfig.DB_HOST,
-    port: ServerConfig.DB_PORT,
-    user: ServerConfig.DB_USER,
-    password: ServerConfig.DB_PSWD,
-    database: ServerConfig.DB_NAME,
+    host: EnvConfig.DB_HOST,
+    port: EnvConfig.DB_PORT,
+    user: EnvConfig.DB_USER,
+    password: EnvConfig.DB_PSWD,
+    database: EnvConfig.DB_NAME,
     timezone: "Z",
   })
   .promise();
