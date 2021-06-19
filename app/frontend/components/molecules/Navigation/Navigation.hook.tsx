@@ -1,4 +1,4 @@
-import AuthHook from "@hooks/auth.hook";
+import useAuth from "@hooks/auth.hook";
 import React from "react";
 import { useRouter } from "next/router";
 import NextRoutes from "@routes/next.routes";
@@ -9,11 +9,12 @@ const useNavigation = (ref: React.RefObject<HTMLDivElement>) => {
 
   const [isOptionsVisible, setIsOptionsVisible] = React.useState(false);
 
-  const { user } = AuthHook.useFirebaseAuth();
+  const { user } = useAuth();
 
   useClickAway(ref, () => setIsOptionsVisible(false));
 
   React.useEffect(() => {
+    setIsOptionsVisible(false);
     if (user && !NextRoutes.isWriterRoute(router.pathname)) {
       router.replace(NextRoutes.routes.write);
     } else if (!user && !NextRoutes.isVisitorRoute(router.pathname)) {

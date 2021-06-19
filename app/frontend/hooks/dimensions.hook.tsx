@@ -37,8 +37,4 @@ const useDimensions = () => {
   };
 };
 
-const DimensionsHooks = {
-  useDimensions,
-};
-
-export default DimensionsHooks;
+export default useDimensions;

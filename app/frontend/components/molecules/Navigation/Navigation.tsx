@@ -7,7 +7,7 @@ import Link from "next/link";
 import NextRoutes from "@routes/next.routes";
 import Hoverable from "@components/atoms/Hoverable/Hoverable";
 import classNames from "classnames";
-import AuthHook from "@hooks/auth.hook";
+import useAuth from "@hooks/auth.hook";
 import useNavigation from "./Navigation.hook";
 
 type NavOptionProps = {
@@ -45,7 +45,7 @@ const NavOption: React.FC<NavOptionProps> = ({
 type NavigationProps = {};
 
 const Navigation: React.FC<NavigationProps> = () => {
-  const { user, logout } = AuthHook.useFirebaseAuth();
+  const { user, logout } = useAuth();
 
   const ref = React.useRef<HTMLDivElement>(null);
 
@@ -119,6 +119,15 @@ const Navigation: React.FC<NavigationProps> = () => {
                 [styles.nav_options_menu_visible]: isOptionsVisible,
               })}
             >
+              <img
+                className={styles.nav_options_menu_photo}
+                src={user.photoURL ?? ""}
+                width={48}
+                height={48}
+              />
+              <li className={styles.nav_options_menu_name}>
+                {user.displayName}
+              </li>
               <li>Profile</li>
               <li>Settings</li>
               <li onClick={logout}>Logout</li>

@@ -4,12 +4,12 @@ import React from "react";
 import classNames from "classnames";
 import Text from "@components/styled/Text.styled";
 import ImgIcon, { ImgIcons } from "@components/atoms/ImgIcon/ImgIcon";
-import AuthHook from "@hooks/auth.hook";
+import useAuth from "@hooks/auth.hook";
 
 type SignInPageProps = {};
 
 const SignInPage: React.FC<SignInPageProps> = () => {
-  const { signInWithGoogle, signInWithFacebook } = AuthHook.useFirebaseAuth();
+  const { signInWithGoogle, signInWithFacebook } = useAuth();
 
   return (
     <Layout.Centered padding>

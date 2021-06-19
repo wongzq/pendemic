@@ -4,7 +4,7 @@ import FirebaseApp from "@configs/firebase.config";
 import React from "react";
 import ApiRoutes from "@routes/api.routes";
 
-const useFirebaseAuth = () => {
+const useAuth = () => {
   const [user, setUser] = React.useState<firebase.User | null>(null);
 
   React.useEffect(() => {
@@ -49,6 +49,4 @@ const useFirebaseAuth = () => {
   return { user, signInWithGoogle, signInWithFacebook, logout };
 };
 
-const AuthHook = { useFirebaseAuth };
-
-export default AuthHook;
+export default useAuth;

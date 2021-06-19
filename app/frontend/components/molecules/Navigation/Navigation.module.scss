@@ -118,11 +118,29 @@
     box-shadow: 0 0.25rem 0.5rem var(--shadow);
     display: none;
 
-    li {
+    &_photo {
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+    &_name {
+      text-align: center;
+      width: 100%;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.25rem;
+        width: 100%;
+        height: 0.0625rem;
+        background: var(--grey-light);
+        border-radius: 0.25rem;
+      }
+    }
+    li:nth-child(n + 3) {
       padding: 0.25rem 0.75rem;
       cursor: pointer;
     }
-    li:hover {
+    li:nth-child(n + 3):hover {
       background: linear-gradient(to right, var(--grey-light), transparent);
     }
   }

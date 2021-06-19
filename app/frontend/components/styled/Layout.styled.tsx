@@ -27,7 +27,7 @@ const Nav = styled.div`
   display: flex;
   flex-direction: column;
   box-shadow: 0 0.0313rem 0.125rem var(--shadow);
-  z-index: 1;
+  z-index: 5;
 `;
 
 const Layout = { Centered, Nav };
