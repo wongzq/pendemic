@@ -124,7 +124,9 @@
     }
     &_name {
       text-align: center;
-      width: 100%;
+      overflow-wrap: break-word;
+      max-width: 10rem;
+      padding: 0rem 0.5rem;
       &::after {
         content: "";
         position: absolute;
