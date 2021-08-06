@@ -1,4 +1,4 @@
-import useAuth from "@hooks/auth.hook";
+import useAuth from "@hooks/useAuth.hook";
 import React from "react";
 import { useRouter } from "next/router";
 import NextRoutes from "@routes/next.routes";

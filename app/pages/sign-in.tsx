@@ -4,7 +4,7 @@ import React from "react";
 import classNames from "classnames";
 import Text from "@components/styled/Text.styled";
 import ImgIcon, { ImgIcons } from "@components/atoms/ImgIcon/ImgIcon";
-import useAuth from "@hooks/auth.hook";
+import useAuth from "@hooks/useAuth.hook";
 
 type SignInPageProps = {};
 

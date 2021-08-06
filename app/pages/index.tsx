@@ -3,12 +3,12 @@ import styles from "@styles/index.module.scss";
 import Layout from "@components/styled/Layout.styled";
 import SvgIcon, { SvgIcons } from "@components/atoms/SvgIcon/SvgIcon";
 import Text from "@components/styled/Text.styled";
-import HomePageHooks from "@hooks/index.hook";
+import useHomePage from "@hooks/useHomePage.hook";
 import classNames from "classnames";
 
-type indexProps = {};
+type HomePageProps = {};
 
-const index: React.FC<indexProps> = () => {
+const HomePage: React.FC<HomePageProps> = () => {
   const {
     refSvgPlan,
     refSvgWrite,
@@ -16,7 +16,7 @@ const index: React.FC<indexProps> = () => {
     refTxtWrite,
     planHovered,
     writeHovered,
-  } = HomePageHooks.usePendemicLogo();
+  } = useHomePage();
 
   const svgPlanTclassNames = classNames(styles.svg_plan);
   const svgWriteTclassNames = classNames(styles.svg_write);
@@ -40,7 +40,12 @@ const index: React.FC<indexProps> = () => {
           <Text.H1 weight="bold" family="catamaran">
             Plan
           </Text.H1>
-          <Text.H2 size="m" color="grey-dark" weight="semibold" family="catamaran">
+          <Text.H2
+            size="m"
+            color="grey-dark"
+            weight="semibold"
+            family="catamaran"
+          >
             Draft your characters, plot and setting
           </Text.H2>
         </div>
@@ -72,7 +77,12 @@ const index: React.FC<indexProps> = () => {
           <Text.H1 weight="bold" family="catamaran">
             Write
           </Text.H1>
-          <Text.H2 size="m" color="grey-dark" weight="semibold" family="catamaran">
+          <Text.H2
+            size="m"
+            color="grey-dark"
+            weight="semibold"
+            family="catamaran"
+          >
             Compose your thoughts into a novel
           </Text.H2>
         </div>
@@ -86,4 +96,4 @@ const index: React.FC<indexProps> = () => {
   );
 };
 
-export default index;
+export default HomePage;

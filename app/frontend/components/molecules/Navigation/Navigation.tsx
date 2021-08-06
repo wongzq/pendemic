@@ -7,7 +7,7 @@ import Link from "next/link";
 import NextRoutes from "@routes/next.routes";
 import Hoverable from "@components/atoms/Hoverable/Hoverable";
 import classNames from "classnames";
-import useAuth from "@hooks/auth.hook";
+import useAuth from "@hooks/useAuth.hook";
 import useNavigation from "./Navigation.hook";
 
 type NavOptionProps = {

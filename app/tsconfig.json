@@ -22,14 +22,8 @@
       "$assets/*": ["public/assets/*"],
       "$types/*": ["types/*"],
       "$utils/*": ["utils/*"],
-      "@configs/*": ["frontend/configs/*"],
-      "@components/*": ["frontend/components/*"],
-      "@hooks/*": ["frontend/hooks/*"],
-      "@routes/*": ["frontend/routes/*"],
-      "@styles/*": ["frontend/styles/*"],
-      "#configs/*": ["backend/configs/*"],
-      "#middlewares/*": ["backend/middlewares/*"],
-      "#models/*": ["backend/models/*"]
+      "@*": ["frontend/*"],
+      "#*": ["backend/*"]
     }
   },
   "exclude": ["node_modules"],

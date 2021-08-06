@@ -1,6 +1,6 @@
 import React from "react";
 
-const usePendemicLogo = () => {
+const useHomePage = () => {
   const refSvgPlan = React.useRef<SVGSVGElement>(null);
   const refSvgWrite = React.useRef<SVGSVGElement>(null);
 
@@ -65,6 +65,4 @@ const usePendemicLogo = () => {
   };
 };
 
-const HomePageHooks = { usePendemicLogo };
-
-export default HomePageHooks;
+export default useHomePage;
