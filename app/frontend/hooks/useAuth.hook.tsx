@@ -1,24 +1,33 @@
-import "firebase/auth";
-import firebase from "firebase/app";
+import {
+  getAuth,
+  FacebookAuthProvider,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+  signOut,
+  User,
+} from "firebase/auth";
 import FirebaseApp from "@configs/firebase.config";
 import React from "react";
 import ApiRoutes from "@routes/api.routes";
 
 const useAuth = () => {
-  const [user, setUser] = React.useState<firebase.User | null>(null);
+  const auth = getAuth(FirebaseApp);
+
+  const [user, setUser] = React.useState<User | null>(null);
 
   React.useEffect(() => {
-    FirebaseApp.auth().onAuthStateChanged(async (user) => setUser(user));
+    onAuthStateChanged(auth, async (user) => setUser(user));
     return () => setUser(null);
   }, []);
 
   const signInWithGoogle = async () => {
     try {
-      const Gprovider = new firebase.auth.GoogleAuthProvider();
+      const Gprovider = new GoogleAuthProvider();
       Gprovider.addScope("email");
       Gprovider.addScope("profile");
 
-      const credential = await FirebaseApp.auth().signInWithPopup(Gprovider);
+      const credential = await signInWithPopup(auth, Gprovider);
       await ApiRoutes.signIn(credential);
     } catch (err) {
       console.log(err);
@@ -27,11 +36,11 @@ const useAuth = () => {
 
   const signInWithFacebook = async () => {
     try {
-      const FBprovider = new firebase.auth.FacebookAuthProvider();
+      const FBprovider = new FacebookAuthProvider();
       FBprovider.addScope("email");
       FBprovider.addScope("public_profile");
 
-      const credential = await FirebaseApp.auth().signInWithPopup(FBprovider);
+      const credential = await signInWithPopup(auth, FBprovider);
       await ApiRoutes.signIn(credential);
     } catch (err) {
       console.log(err);
@@ -40,7 +49,7 @@ const useAuth = () => {
 
   const logout = async () => {
     try {
-      await FirebaseApp.auth().signOut();
+      await signOut(auth);
     } catch (err) {
       console.log(err);
     }

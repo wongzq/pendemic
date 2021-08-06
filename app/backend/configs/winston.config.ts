@@ -42,7 +42,7 @@ const formatMessage = (
 
 winston.addColors(colors);
 
-const Logger = winston.createLogger({
+const WinstonLogger = winston.createLogger({
   level: level,
   levels: levels,
   format: customFormat,
@@ -86,30 +86,30 @@ type LoggerType = {
   };
   file: string;
 };
-const logger: LoggerType = {
+const Logger: LoggerType = {
   none: (...msg: any) =>
-    Logger.log({ level: "none", message: prettify(...msg) }),
+    WinstonLogger.log({ level: "none", message: prettify(...msg) }),
   error: (...msg: any) =>
-    Logger.log({ level: "error", message: prettify(...msg) }),
+    WinstonLogger.log({ level: "error", message: prettify(...msg) }),
   warn: (...msg: any) =>
-    Logger.log({ level: "warn", message: prettify(...msg) }),
+    WinstonLogger.log({ level: "warn", message: prettify(...msg) }),
   info: (...msg: any) =>
-    Logger.log({ level: "info", message: prettify(...msg) }),
+    WinstonLogger.log({ level: "info", message: prettify(...msg) }),
   debug: (...msg: any) =>
-    Logger.log({ level: "debug", message: prettify(...msg) }),
+    WinstonLogger.log({ level: "debug", message: prettify(...msg) }),
   success: (req: NextApiRequest, ...msg: any) =>
-    Logger.log({
+    WinstonLogger.log({
       level: "info",
       message: formatMessage("SUCCESS", req, msg ? prettify(...msg) : ""),
     }),
   failure: {
     warn: (req: NextApiRequest, ...msg: any) =>
-      Logger.log({
+      WinstonLogger.log({
         level: "warn",
         message: formatMessage("FAILURE", req, msg ? prettify(...msg) : ""),
       }),
     error: (req: NextApiRequest, ...msg: any) =>
-      Logger.log({
+      WinstonLogger.log({
         level: "error",
         message: formatMessage("FAILURE", req, msg ? prettify(...msg) : ""),
       }),
@@ -117,12 +117,4 @@ const logger: LoggerType = {
   file: EnvConfig.LOG_FILE,
 };
 
-declare global {
-  module NodeJS {
-    interface Global {
-      logger: LoggerType;
-    }
-  }
-}
-
-global.logger = logger;
+export default Logger;

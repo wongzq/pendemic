@@ -1,9 +1,9 @@
 import { ApiResult } from "$types/api-result.type";
 import axios from "axios";
-import firebase from "firebase/app";
+import { UserCredential } from "firebase/auth";
 
 const ApiRoutes = {
-  signIn: async (credential: firebase.auth.UserCredential) => {
+  signIn: async (credential: UserCredential) => {
     try {
       const res = await axios.post("/api/sign-in", { credential });
       console.log(res);

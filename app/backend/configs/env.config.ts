@@ -28,6 +28,4 @@ const EnvConfig = {
   LOG_FILE: "pendemic-backend.log",
 };
 
-console.log(EnvConfig);
-
 export default EnvConfig;

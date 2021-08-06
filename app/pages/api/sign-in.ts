@@ -1,14 +1,14 @@
 import FirebaseAdmin from "#configs/firebase.config";
 import AllMiddleware from "#middlewares/all.middleware";
-import Models from "#models/mysql";
+import Models from "#models/database";
 import { ApiHandler, ApiMethod, ApiResponse } from "$types/api-response.type";
 import { Codes, Exception } from "$types/error.type";
-import firebase from "firebase/app";
+import { UserCredential } from "firebase/auth";
 
 const signIn: ApiHandler = async (req, res, next) => {
   const {
     credential: { user },
-  } = <{ credential: firebase.auth.UserCredential }>req.body;
+  } = <{ credential: UserCredential }>req.body;
 
   if (!user?.uid) throw Exception.internal(Codes.NOT_FOUND, "User not found");
 

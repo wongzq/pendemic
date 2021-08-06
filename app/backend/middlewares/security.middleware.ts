@@ -1,3 +1,4 @@
+import Logger from "#configs/winston.config";
 import { ApiHandler } from "$types/api-response.type";
 
 const metadata: ApiHandler = async (req, _, next) => {
@@ -6,7 +7,7 @@ const metadata: ApiHandler = async (req, _, next) => {
     const ip = req.headers["x-forwarded-for"] ?? req.socket.remoteAddress;
     const { origin, referer, host } = req.headers;
 
-    global.logger.none(
+    Logger.none(
       `IP: ${ip} | Referer: ${referer} | Origin: ${origin} | Host: ${host} | URL: ${url}`
     );
     next();
