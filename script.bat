@@ -28,7 +28,6 @@ IF "%1"=="scp" (
   IF "%2"=="sqldump" (
     CALL scp -r root@vultr.wongzq.com:/home/wongzq/pendemic/data/sqldump database
   )
-  )
 )
 
 IF "%1"=="sequelize" (
