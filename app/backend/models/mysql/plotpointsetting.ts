@@ -62,7 +62,7 @@ export class plotpointsetting extends Model<plotpointsettingAttributes, plotpoin
         ]
       },
       {
-        name: "plotpointsetting_setting_id_foreign",
+        name: "setting_id",
         using: "BTREE",
         fields: [
           { name: "setting_id" },

@@ -73,7 +73,7 @@ export class characterrelationship extends Model<characterrelationshipAttributes
         ]
       },
       {
-        name: "characterrelationship_character_id_2_foreign",
+        name: "character_id_2",
         using: "BTREE",
         fields: [
           { name: "character_id_2" },

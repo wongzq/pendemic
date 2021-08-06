@@ -8,7 +8,7 @@ import type { setting, settingId } from './setting';
 import type { writer, writerId } from './writer';
 
 export interface storyAttributes {
-  writer_id: string;
+  writer_id: number;
   story_id: number;
   name: string;
   description?: string;
@@ -19,7 +19,7 @@ export type storyId = story[storyPk];
 export type storyCreationAttributes = Optional<storyAttributes, storyPk>;
 
 export class story extends Model<storyAttributes, storyCreationAttributes> implements storyAttributes {
-  writer_id!: string;
+  writer_id!: number;
   story_id!: number;
   name!: string;
   description?: string;
@@ -93,7 +93,7 @@ export class story extends Model<storyAttributes, storyCreationAttributes> imple
   static initModel(sequelize: Sequelize.Sequelize): typeof story {
     story.init({
     writer_id: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'writer',
@@ -128,12 +128,10 @@ export class story extends Model<storyAttributes, storyCreationAttributes> imple
         ]
       },
       {
-        name: "story_writer_id_name_unique",
-        unique: true,
+        name: "writer_id",
         using: "BTREE",
         fields: [
           { name: "writer_id" },
-          { name: "name" },
         ]
       },
     ]

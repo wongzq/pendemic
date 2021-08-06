@@ -74,9 +74,8 @@ export class chapter extends Model<chapterAttributes, chapterCreationAttributes>
       allowNull: false
     },
     content_url: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-      unique: "chapter_content_url_unique"
+      type: DataTypes.TEXT,
+      allowNull: false
     },
     order: {
       type: DataTypes.INTEGER,
@@ -96,20 +95,10 @@ export class chapter extends Model<chapterAttributes, chapterCreationAttributes>
         ]
       },
       {
-        name: "chapter_story_id_order_unique",
-        unique: true,
+        name: "story_id",
         using: "BTREE",
         fields: [
           { name: "story_id" },
-          { name: "order" },
-        ]
-      },
-      {
-        name: "chapter_content_url_unique",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "content_url" },
         ]
       },
     ]

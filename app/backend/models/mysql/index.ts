@@ -1,5 +1,5 @@
 import EnvConfig from "#configs/env.config";
-import { initModels } from "#models/cleardb/init-models";
+import { initModels } from "#models/mysql/init-models";
 import { Sequelize } from "sequelize";
 
 const Models = initModels(

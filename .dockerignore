@@ -1,0 +1,14 @@
+.github
+
+**/node_modules
+**/npm-debug.log
+**/build
+**/dist
+**/README.md
+
+**/.git
+**/.gitignore
+
+**/.dockerignore
+**/Dockerfile*
+**/docker-compose*

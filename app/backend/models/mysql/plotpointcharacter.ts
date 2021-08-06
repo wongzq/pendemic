@@ -62,7 +62,7 @@ export class plotpointcharacter extends Model<plotpointcharacterAttributes, plot
         ]
       },
       {
-        name: "plotpointcharacter_character_id_foreign",
+        name: "character_id",
         using: "BTREE",
         fields: [
           { name: "character_id" },

@@ -38,6 +38,7 @@ pendemic-backend.log
 # database
 # ----------------------------------------
 database/*/*.config
+sqldump/
 
 # ----------------------------------------
 # design

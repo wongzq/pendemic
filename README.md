@@ -21,7 +21,7 @@ The name originates from the words **_pen_** and **_pandemic_**, meant to repres
 - ### Backend:
   - `NextJS`, `ExpressJS`, `NodeJS`
 - ### Database:
-  - `Heroku ClearDB (MySQL)`
+  - `MySQL (Self Hosted)`
   - `Firebase Cloud Firestore (NoSQL Document Store)`
 - ## Deployment:
   - `Vercel`

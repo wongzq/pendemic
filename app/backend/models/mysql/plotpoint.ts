@@ -163,21 +163,18 @@ export class plotpoint extends Model<plotpointAttributes, plotpointCreationAttri
         ]
       },
       {
-        name: "plotpoint_story_id_order_unique",
-        unique: true,
+        name: "plot_id",
+        using: "BTREE",
+        fields: [
+          { name: "plot_id" },
+        ]
+      },
+      {
+        name: "plotpoint_index_0",
         using: "BTREE",
         fields: [
           { name: "story_id" },
           { name: "order" },
-        ]
-      },
-      {
-        name: "plotpoint_plot_id_name_unique",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "plot_id" },
-          { name: "name" },
         ]
       },
     ]

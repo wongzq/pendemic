@@ -95,12 +95,10 @@ export class setting extends Model<settingAttributes, settingCreationAttributes>
         ]
       },
       {
-        name: "setting_story_id_name_unique",
-        unique: true,
+        name: "story_id",
         using: "BTREE",
         fields: [
           { name: "story_id" },
-          { name: "name" },
         ]
       },
     ]

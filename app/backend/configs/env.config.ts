@@ -1,7 +1,7 @@
 import { NodeEnv } from "$types/server.type";
 
 const EnvConfig = {
-  ENV: new NodeEnv(process.env.APP_ENV ?? ""),
+  ENV: new NodeEnv(process.env.NODE_ENV ?? ""),
   ORIGIN_URL: process.env.ORIGIN_URL ?? "",
 
   DB_URI: process.env.DB_URI ?? "",
@@ -27,5 +27,7 @@ const EnvConfig = {
 
   LOG_FILE: "pendemic-backend.log",
 };
+
+console.log(EnvConfig);
 
 export default EnvConfig;

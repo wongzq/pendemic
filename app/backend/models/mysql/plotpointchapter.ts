@@ -62,7 +62,7 @@ export class plotpointchapter extends Model<plotpointchapterAttributes, plotpoin
         ]
       },
       {
-        name: "plotpointchapter_chapter_id_foreign",
+        name: "chapter_id",
         using: "BTREE",
         fields: [
           { name: "chapter_id" },

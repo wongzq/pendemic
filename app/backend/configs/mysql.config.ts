@@ -13,6 +13,6 @@ export const pool = mysql
   })
   .promise();
 
-const ClearDB = { pool };
+const MySQL = { pool };
 
-export default ClearDB;
+export default MySQL;

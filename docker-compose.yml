@@ -1,24 +1,42 @@
-version: "3"
+version: "3.9"
 services:
-  # certbot:
-  #   image: certbot/certbot
-  # volumes:
-  #   - ./data/certbot/conf:/etc/letsencrypt
-  #   - ./data/certbot/www:/var/www/certbot
+  certbot:
+    container_name: certbot
+    image: certbot/certbot
+    restart: always
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
   nginx:
-    restart: always
+    container_name: nginx
     image: wongzq/pendemic-nginx
-    ports:
-      - "80:80"
-    # volumes:
-    #   - ./data/certbot/conf:/etc/letsencrypt
-    #   - ./data/certbot/www:/var/www/certbot
-
-  app:
     restart: always
-    image: wongzq/pendemic-app
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
+
+  next:
+    container_name: next
+    image: wongzq/pendemic-next
+    restart: always
     expose:
       - 3000
-    env_file:
-      - /etc/.env.staging
+
+  mysql:
+    container_name: mysql
+    image: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./data/database:/var/lib/mysql
+      - ./data/sql:/sql
+      - ./data/sqldump:/sqldump

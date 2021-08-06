@@ -82,21 +82,11 @@ export class plot extends Model<plotAttributes, plotCreationAttributes> implemen
         ]
       },
       {
-        name: "plot_story_id_order_unique",
-        unique: true,
+        name: "plot_index_0",
         using: "BTREE",
         fields: [
           { name: "story_id" },
           { name: "order" },
-        ]
-      },
-      {
-        name: "plot_story_id_name_unique",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "story_id" },
-          { name: "name" },
         ]
       },
     ]
