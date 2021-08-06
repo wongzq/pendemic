@@ -32,20 +32,18 @@ app/yarn-error.log*
 app/.vercel
 
 # log
-pendemic-backend.log
+app/pendemic-backend.log
 
 # ----------------------------------------
 # database
 # ----------------------------------------
-database/*/*.config
-sqldump/
+database/dump/
 
 # ----------------------------------------
 # design
 # ----------------------------------------
-~$*
+design/~$*
 
 # ----------------------------------------
 # nginx
 # ----------------------------------------
-nginx/ssl/

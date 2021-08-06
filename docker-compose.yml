@@ -40,4 +40,4 @@ services:
     volumes:
       - ./data/database:/var/lib/mysql
       - ./data/sql:/sql
-      - ./data/sqldump:/sqldump
+      - ./data/dump:/dump

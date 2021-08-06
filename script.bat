@@ -25,8 +25,8 @@ IF "%1"=="scp" (
   IF "%2"=="sql" (
     CALL scp -r database/sql root@vultr.wongzq.com:/home/wongzq/pendemic/data
   )
-  IF "%2"=="sqldump" (
-    CALL scp -r root@vultr.wongzq.com:/home/wongzq/pendemic/data/sqldump database
+  IF "%2"=="dump" (
+    CALL scp -r root@vultr.wongzq.com:/home/wongzq/pendemic/data/dump database
   )
 )
 
