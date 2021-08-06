@@ -21,10 +21,12 @@ The name originates from the words **_pen_** and **_pandemic_**, meant to repres
 - ### Backend:
   - `NextJS`, `ExpressJS`, `NodeJS`
 - ### Database:
-  - `MySQL (Self Hosted)`
+  - `MySQL`
   - `Firebase Cloud Firestore (NoSQL Document Store)`
 - ## Deployment:
-  - `Vercel`
+  - `Docker & Docker Compose`
+  - `Nginx (Reverse Proxy)`
+  - `Vultr Instance`
 
 <br>
 

@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
+    "lint": "next lint",
     "type-check": "tsc"
   },
   "dependencies": {
@@ -42,6 +43,8 @@
     "@types/styled-components": "^5.1.9",
     "babel-plugin-styled-components": "^1.12.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.0.1",
     "typescript": "^4.3.4",
     "webpack": "^5.38.1"
   },
