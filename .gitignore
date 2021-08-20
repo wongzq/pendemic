@@ -1,40 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # ----------------------------------------
-# app
-# ----------------------------------------
-# dependencies
-app/node_modules
-app/.pnp
-app/.pnp.js
-
-# testing
-app/coverage
-
-# next.js
-app/.next/
-app/out/
-
-# production
-app/build
-
-# misc
-app/.DS_Store
-app/.pem
-app/.env.*
-
-# debug
-app/npm-debug.log*
-app/yarn-debug.log*
-app/yarn-error.log*
-
-# vercel
-app/.vercel
-
-# log
-app/pendemic-backend.log
-
-# ----------------------------------------
 # database
 # ----------------------------------------
 database/dump/
@@ -45,5 +11,44 @@ database/dump/
 design/~$*
 
 # ----------------------------------------
+# next
+# ----------------------------------------
+# dependencies
+next/node_modules
+next/.pnp
+next/.pnp.js
+
+# testing
+next/coverage
+
+# next.js
+next/.next/
+next/out/
+
+# production
+next/build
+
+# misc
+next/.DS_Store
+next/.pem
+next/.env.*
+
+# debug
+next/npm-debug.log*
+next/yarn-debug.log*
+next/yarn-error.log*
+
+# vercel
+next/.vercel
+
+# log
+next/pendemic-backend.log
+
+# ----------------------------------------
 # nginx
 # ----------------------------------------
+
+# ----------------------------------------
+# others
+# ----------------------------------------
+data
