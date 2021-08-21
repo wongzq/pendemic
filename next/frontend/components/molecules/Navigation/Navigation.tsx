@@ -1,14 +1,13 @@
 import ImgIcon, { ImgIcons } from "@components/atoms/ImgIcon/ImgIcon";
 import React from "react";
-import styles from "./Navigation.module.scss";
 import Text from "@components/styled/Text.styled";
 import Layout from "@components/styled/Layout.styled";
 import Link from "next/link";
 import NextRoutes from "@routes/next.routes";
 import Hoverable from "@components/atoms/Hoverable/Hoverable";
-import classNames from "classnames";
 import useAuth from "@hooks/useAuth.hook";
 import useNavigation from "./Navigation.hook";
+import S from "./Navigation.styled";
 
 type NavOptionProps = {
   color: "lavender" | "ember";
@@ -24,21 +23,15 @@ const NavOption: React.FC<NavOptionProps> = ({
   children,
 }) => {
   return (
-    <div
-      className={classNames(styles.nav_option, styles[`nav_option--${color}`])}
-    >
+    <S.NavOption color={color}>
       <Hoverable.Underline color={color} height={4} centered freeze={selected}>
         <Link href={route}>
-          <Text.P
-            size="xs"
-            color={selected ? color : undefined}
-            className={styles["nav_option__text"]}
-          >
+          <S.NavOptionText size="xs" color={selected ? color : undefined}>
             {children}
-          </Text.P>
+          </S.NavOptionText>
         </Link>
       </Hoverable.Underline>
-    </div>
+    </S.NavOption>
   );
 };
 
@@ -54,9 +47,9 @@ const Navigation: React.FC<NavigationProps> = () => {
 
   return (
     <Layout.Nav>
-      <nav className={styles.main}>
+      <S.Nav>
         {user ? (
-          <div className={styles.nav_1}>
+          <S.Nav1>
             <NavOption
               route={NextRoutes.routes.plan}
               color="lavender"
@@ -64,34 +57,34 @@ const Navigation: React.FC<NavigationProps> = () => {
             >
               Plan
             </NavOption>
-          </div>
+          </S.Nav1>
         ) : (
-          <div className={styles.nav_1}>
+          <S.Nav1>
             <NavOption route={NextRoutes.routes.home} color="lavender">
               Home
             </NavOption>
-          </div>
+          </S.Nav1>
         )}
 
         <Link href={NextRoutes.routes.home}>
-          <div className={styles.logo}>
+          <S.Logo>
             <Hoverable.Fade
               origin={<ImgIcon img={ImgIcons.LogoPendemic} />}
               hovered={<ImgIcon img={ImgIcons.LogoPendemicDark} />}
             />
-            <Text.P size="s" weight="semibold" className={styles.logo_title}>
+            <S.LogoTitle size="s" weight="semibold">
               <Text.Span color="ember" family="lora">
                 Pen
               </Text.Span>
               <Text.Span color="lavender" family="lora">
                 demic
               </Text.Span>
-            </Text.P>
-          </div>
+            </S.LogoTitle>
+          </S.Logo>
         </Link>
 
         {user ? (
-          <div className={styles.nav_2}>
+          <S.Nav2>
             <NavOption
               route={NextRoutes.routes.write}
               color="ember"
@@ -99,42 +92,28 @@ const Navigation: React.FC<NavigationProps> = () => {
             >
               Write
             </NavOption>
-          </div>
+          </S.Nav2>
         ) : (
-          <div className={styles.nav_2}>
+          <S.Nav2>
             <NavOption route={NextRoutes.routes.signIn} color="ember">
               Sign In
             </NavOption>
-          </div>
+          </S.Nav2>
         )}
 
         {user && (
-          <div ref={ref} className={styles.nav_options}>
-            <div
-              className={styles.nav_options_arrow}
-              onClick={onClickOptions}
-            />
-            <ul
-              className={classNames(styles.nav_options_menu, {
-                [styles.nav_options_menu_visible]: isOptionsVisible,
-              })}
-            >
-              <img
-                className={styles.nav_options_menu_photo}
-                src={user.photoURL ?? ""}
-                width={48}
-                height={48}
-              />
-              <li className={styles.nav_options_menu_name}>
-                {user.displayName}
-              </li>
+          <S.NavOptions ref={ref}>
+            <S.Arrow onClick={onClickOptions} />
+            <S.Menu visible={isOptionsVisible}>
+              <img src={user.photoURL || ""} width={48} height={48} />
+              <li>{user.displayName}</li>
               <li>Profile</li>
               <li>Settings</li>
               <li onClick={logout}>Logout</li>
-            </ul>
-          </div>
+            </S.Menu>
+          </S.NavOptions>
         )}
-      </nav>
+      </S.Nav>
     </Layout.Nav>
   );
 };

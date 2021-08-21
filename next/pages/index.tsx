@@ -1,10 +1,9 @@
 import React from "react";
-import styles from "@styles/index.module.scss";
 import Layout from "@components/styled/Layout.styled";
-import SvgIcon, { SvgIcons } from "@components/atoms/SvgIcon/SvgIcon";
+import { SvgIcons } from "@components/atoms/SvgIcon/SvgIcon";
 import Text from "@components/styled/Text.styled";
 import useHomePage from "@hooks/useHomePage.hook";
-import classNames from "classnames";
+import S from "@styles/index.styled";
 
 type HomePageProps = {};
 
@@ -18,25 +17,10 @@ const HomePage: React.FC<HomePageProps> = () => {
     writeHovered,
   } = useHomePage();
 
-  const svgPlanTclassNames = classNames(styles.svg_plan);
-  const svgWriteTclassNames = classNames(styles.svg_write);
-  const svgPlanClassNames = classNames(styles.svg_plan, {
-    [styles.plan_hovered]: planHovered,
-  });
-  const svgWriteClassNames = classNames(styles.svg_write, {
-    [styles.write_hovered]: writeHovered,
-  });
-  const txtPlanClassNames = classNames(styles.txt_plan, {
-    [styles.plan_hovered]: planHovered,
-  });
-  const txtWriteClassNames = classNames(styles.txt_write, {
-    [styles.write_hovered]: writeHovered,
-  });
-
   return (
     <Layout.Centered padding>
-      <div className={styles.main}>
-        <div className={txtPlanClassNames} ref={refTxtPlan}>
+      <S.Main>
+        <S.TxtPlan ref={refTxtPlan} hovered={planHovered}>
           <Text.H1 weight="bold" family="catamaran">
             Plan
           </Text.H1>
@@ -48,32 +32,32 @@ const HomePage: React.FC<HomePageProps> = () => {
           >
             Draft your characters, plot and setting
           </Text.H2>
-        </div>
+        </S.TxtPlan>
 
-        <div className={styles.logo}>
-          <SvgIcon
+        <S.Logo>
+          <S.SvgPlan
+            hovered={planHovered}
             icon={SvgIcons.PendemicPlan}
-            className={svgPlanClassNames}
             ref={refSvgPlan}
           />
-          <SvgIcon
+          <S.SvgWrite
+            hovered={writeHovered}
             icon={SvgIcons.PendemicWrite}
-            className={svgWriteClassNames}
             ref={refSvgWrite}
           />
-          <SvgIcon
+          <S.SvgPlan
+            hovered={false}
             icon={SvgIcons.PendemicPlanTransparent}
-            className={svgPlanTclassNames}
             ref={refSvgPlan}
           />
-          <SvgIcon
+          <S.SvgWrite
+            hovered={false}
             icon={SvgIcons.PendemicWriteTransparent}
-            className={svgWriteTclassNames}
             ref={refSvgWrite}
           />
-        </div>
+        </S.Logo>
 
-        <div className={txtWriteClassNames} ref={refTxtWrite}>
+        <S.TxtWrite ref={refTxtWrite} hovered={writeHovered}>
           <Text.H1 weight="bold" family="catamaran">
             Write
           </Text.H1>
@@ -85,12 +69,10 @@ const HomePage: React.FC<HomePageProps> = () => {
           >
             Compose your thoughts into a novel
           </Text.H2>
-        </div>
-      </div>
+        </S.TxtWrite>
+      </S.Main>
 
-      <Text.H1 weight="semibold" className={styles["txt_quote"]}>
-        All in one place
-      </Text.H1>
+      <S.TxtQuote weight="semibold">All in one place</S.TxtQuote>
       <div></div>
     </Layout.Centered>
   );

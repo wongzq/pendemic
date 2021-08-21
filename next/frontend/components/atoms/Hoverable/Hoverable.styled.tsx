@@ -1,9 +1,7 @@
 import { Colors } from "@styles/_app.styled";
 import styled, { css } from "styled-components";
 
-const UnderlineContainer = styled.div`
-  position: relative;
-`;
+const UnderlineContainer = styled.div``;
 
 type HoverableunderlineLineProps = {
   color: "lavender" | "ember";

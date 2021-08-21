@@ -174,17 +174,11 @@ const Ripple: React.FC<RippleProps> = ({ color = "white" }) => {
   // component
   return (
     <S.RippleContainer onClick={onClick}>
-      {isRippling && (
-        <S.Ripple color={color} x={coords.x} y={coords.y} />
-      )}
+      {isRippling && <S.Ripple color={color} x={coords.x} y={coords.y} />}
     </S.RippleContainer>
   );
 };
 
-const Hoverable = {
-  Underline,
-  Fade,
-  Ripple,
-};
+const Hoverable = { Underline, Fade, Ripple };
 
 export default Hoverable;
