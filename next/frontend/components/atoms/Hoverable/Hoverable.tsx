@@ -2,8 +2,8 @@ import styles from "./Hoverable.module.scss";
 
 import React from "react";
 import classNames from "classnames";
-import { HoverableUnderlineLine } from "./Hoverable.styled";
-import { Coord, DivMouseEvent } from "./Hoverable.model";
+import S from "./Hoverable.styled";
+import { Coord, DivMouseEvent } from "./Hoverable.type";
 
 // --------------------------------------------------------------------------------
 // Hoverable Underline
@@ -55,41 +55,29 @@ const Underline: React.FC<UnderlineProps> = ({
 
   // component
   return (
-    <div className={styles["hoverable-underline"]} {...hoverableProps}>
+    <S.UnderlineContainer {...hoverableProps}>
       {/* children component */}
       {children}
 
       {/* animated underline */}
       {freeze ? (
-        <HoverableUnderlineLine
+        <S.Underline
           color={color}
           height={height ?? 2}
-          className={classNames(styles["hoverable-underline__line"], {
-            [styles["hoverable-underline__line--centered"]]: centered,
-            [styles["hoverable-underline__line--hidden"]]:
-              hoverState === "HIDDEN",
-            [styles["hoverable-underline__line--visible"]]:
-              hoverState === "VISIBLE",
-            [styles["hoverable-underline__line--expanded"]]:
-              hoverState === "EXPANDED" || freeze,
-          })}
+          centered={centered}
+          hoverState={hoverState}
+          freeze={freeze}
         />
       ) : (
-        <HoverableUnderlineLine
+        <S.Underline
           color={color}
           height={height ?? 2}
-          className={classNames(styles["hoverable-underline__line"], {
-            [styles["hoverable-underline__line--centered"]]: centered,
-            [styles["hoverable-underline__line--hidden"]]:
-              hoverState === "HIDDEN",
-            [styles["hoverable-underline__line--visible"]]:
-              hoverState === "VISIBLE",
-            [styles["hoverable-underline__line--expanded"]]:
-              hoverState === "EXPANDED",
-          })}
+          centered={centered}
+          hoverState={hoverState}
+          freeze={freeze}
         />
       )}
-    </div>
+    </S.UnderlineContainer>
   );
 };
 
@@ -185,17 +173,11 @@ const Ripple: React.FC<RippleProps> = ({ color = "white" }) => {
 
   // component
   return (
-    <div className={styles["hoverable-ripple"]} onClick={onClick}>
+    <S.RippleContainer onClick={onClick}>
       {isRippling && (
-        <span
-          className={classNames(styles["hoverable-ripple__ripple"], {
-            [styles["hoverable-ripple__ripple--white"]]: color === "white",
-            [styles["hoverable-ripple__ripple--grey"]]: color === "grey",
-          })}
-          style={{ left: coords.x, top: coords.y }}
-        />
+        <S.Ripple color={color} x={coords.x} y={coords.y} />
       )}
-    </div>
+    </S.RippleContainer>
   );
 };
 

@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./Footer.module.scss";
-import Text from "@components/styled/Text.styled"
+import S from "./Footer.styled";
+import Text from "@components/styled/Text.styled";
 
 type FooterProps = {};
 
 const Footer: React.FC<FooterProps> = () => {
   return (
-    <footer className={styles.footer}>
+    <S.Footer>
       <Text.P color="grey">© 2021 Wong ZQ • All rights reserved</Text.P>
-    </footer>
+    </S.Footer>
   );
 };
 

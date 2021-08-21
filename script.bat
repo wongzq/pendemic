@@ -1,27 +1,6 @@
 @ECHO OFF
 
-IF "%1"=="pendemic" (
-  CALL ./script docker nginx
-  CALL ./script docker next
-  CALL ./script scp docker-compose
-  CALL ./script scp sql
-)
-
-IF "%1"=="docker" (
-  IF "%2"=="next" (
-    CALL docker build -f Dockerfile.next -t wongzq/pendemic-next .
-    CALL docker push wongzq/pendemic-next
-  )
-  IF "%2"=="nginx" (
-    CALL docker build -f Dockerfile.nginx -t wongzq/pendemic-nginx .
-    CALL docker push wongzq/pendemic-nginx
-  )
-)
-
 IF "%1"=="scp" (
-  IF "%2"=="docker-compose" (
-    CALL scp docker-compose.yml root@vultr.wongzq.com:/home/wongzq/pendemic/docker-compose.yml
-  )
   IF "%2"=="sql" (
     CALL scp -r database/sql root@vultr.wongzq.com:/home/wongzq/pendemic/data
   )
